@@ -19,8 +19,6 @@
 #include "myadc.h"
 
 
-/// gittest
-
 //
 //------------------------------------------------------------------------------
 //
@@ -103,6 +101,8 @@ int leftPower = 130;
 int rightPower = 130;
 char lastTurn = 'x';
 
+int iviType = 2;
+
 int trackLostTimer = 0;
 
 void Task_Run(void) {
@@ -145,18 +145,18 @@ void Task_Run(void) {
                 // Track lost (or straight)
                 trackLostTimer++;
 
-                if (trackLostTimer < 500) {
+                if (trackLostTimer > 20) {
                     XLCDPut('L');
                     if (lastTurn != 'x') {
                         if (lastTurn == 'r') {
                             // Turn right HARD
-                            LeftPWM(140, 0);
-                            RightPWM(70, 0);
+                            LeftPWM(iviType*130, 0);
+                            RightPWM(iviType*40 + (trackLostTimer / 10), 0);
                         }
                         if (lastTurn == 'l') {
                             // Turn left HARD
-                            LeftPWM(70, 0);
-                            RightPWM(140, 0);
+                            LeftPWM(iviType*40 + (trackLostTimer / 10), 0);
+                            RightPWM(iviType*130, 0);
                         }
                     }
                 }
@@ -165,15 +165,15 @@ void Task_Run(void) {
 
                 if (leftIR > rightIR + 10) {
                     // Turn left
-                    LeftPWM(70, 0);
-                    RightPWM(110, 0);
+                    LeftPWM(iviType*60, 0);
+                    RightPWM(iviType*100, 0);
                     lastTurn = 'l';
                     trackLostTimer = 0;
                 }
                 if (rightIR > leftIR + 10) {
                     // Turn right
-                    LeftPWM(110, 0);
-                    RightPWM(70, 0);
+                    LeftPWM(iviType*100, 0);
+                    RightPWM(iviType*60, 0);
                     lastTurn = 'r';
                     trackLostTimer = 0;
                 }
