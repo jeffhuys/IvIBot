@@ -164,3 +164,4 @@ pip-log.txt
 
 ./TiOsa-maze.X/
 *.mk
+Makefile-default.mk
