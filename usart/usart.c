@@ -7,6 +7,7 @@
 #define mDataRdyUSART() PIR1bits.RCIF
 #define mTxRdyUSART()   TXSTAbits.TRMT
 
+extern void pressedA(void);
 
 void initUSART(void) {
 	char c ;
@@ -137,6 +138,16 @@ void Task_Usart(void) {
 				} 
 				if (b2 & 0x08 ) { // button A
 					XLCDPut('A');
+
+                                        pressedA();
+
+//                                        PORTBbits.RB1= ~PORTBbits.RB1;
+//                                        PORTBbits.RB2= ~PORTBbits.RB2;
+//                                        PORTBbits.RB3= ~PORTBbits.RB3;
+//                                        PORTBbits.RB4= ~PORTBbits.RB4;
+//                                        PORTBbits.RB5= ~PORTBbits.RB5;
+//                                        PORTBbits.RB6= ~PORTBbits.RB6;
+//                                        PORTBbits.RB7= ~PORTBbits.RB7;
 				} 
 				if (b2 & 0x10 ) { // button -
 					XLCDPut('-');
@@ -156,6 +167,7 @@ void Task_Usart(void) {
 		else  { 
 			XLCDPut(c); 
 		}
+                OS_Yield();
     }
 }
 

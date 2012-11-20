@@ -18,8 +18,7 @@
 #include "usart/usart.h"
 #include "myadc.h"
 
-
-/// gittest
+extern void Task_Usart(void) ;
 
 //
 //------------------------------------------------------------------------------
@@ -77,11 +76,12 @@ void Task_Display(void) {
 void Task_Hartbeat(void) {
     OS_Delay(100);
     TRISBbits.TRISB4 = 0; // Port is output
-    PORTBbits.RB4 = 0;
+    PORTBbits.RB0 = 0;
     for (;;) {
-        PORTBbits.RB4 = ~PORTBbits.RB4;
+        PORTBbits.RB0 = ~PORTBbits.RB0;
         if (PORTAbits.RA4 == 0) XLCDClear();
         OS_Delay(300);
+        OS_Yield();
     }
 }
 
@@ -96,6 +96,7 @@ int leftIR = 0;
 int rightIR = 0;
 
 bool trackLost;
+int started = 0;
 
 int deltaLR = 0;
 int deltaPower = 0;
@@ -114,26 +115,19 @@ void Task_Run(void) {
     //RightPWM(rightPower, 0);
 
     for (;;) {
-        OS_Delay(48);
-        PORTBbits.RB0 = 1;
-        PORTBbits.RB1 = 1;
-        PORTBbits.RB2 = 1;
-        OS_Delay(2);
+        OS_Delay(50);
+
         leftIR = getAD1();
         frontIR = getAD2();
         rightIR = getAD3();
 
-        PORTBbits.RB0 = 0;
-        PORTBbits.RB1 = 0;
-        PORTBbits.RB2 = 0;
-
-        XLCDL2home(); // home but no cursor
-        //PrintbyteToHex(leftIR);
-        //XLCDPut(':');
-        //PrintbyteToHex(frontIR);
-        //XLCDPut(':');
-        //PrintbyteToHex(rightIR);
-        //XLCDPut(':');
+//        XLCDL2home(); // home but no cursor
+//        PrintbyteToHex(leftIR);
+//        XLCDPut(':');
+//        PrintbyteToHex(frontIR);
+//        XLCDPut(':');
+//        PrintbyteToHex(rightIR);
+//        XLCDPut(':');
 
         deltaLR = leftIR - rightIR;
 
@@ -163,25 +157,54 @@ void Task_Run(void) {
             } else {
                 XLCDPut('N');
 
-                if (leftIR > rightIR + 10) {
-                    // Turn left
-                    LeftPWM(70, 0);
-                    RightPWM(110, 0);
-                    lastTurn = 'l';
-                    trackLostTimer = 0;
-                }
-                if (rightIR > leftIR + 10) {
-                    // Turn right
-                    LeftPWM(110, 0);
-                    RightPWM(70, 0);
-                    lastTurn = 'r';
-                    trackLostTimer = 0;
+                if(started == 1)
+                {
+                    if (leftIR > rightIR + 10) {
+                        // Turn left
+                        LeftPWM(70, 0);
+                        RightPWM(110, 0);
+                        lastTurn = 'l';
+                        trackLostTimer = 0;
+                    }
+                    if (rightIR > leftIR + 10) {
+                        // Turn right
+                        LeftPWM(110, 0);
+                        RightPWM(70, 0);
+                        lastTurn = 'r';
+                        trackLostTimer = 0;
+                    }
                 }
             }
 
         }
         XLCDPut(lastTurn);
+
+        OS_Yield();
     }
+}
+
+// BlueGiga Wt12 commands, wiimote connection
+char command[] = "CALL 00:23:cc:9c:fb:dd 13 l2cap\r"; // Connect to specified wiimote
+//char command[] = "CALL 00:23:cc:9d:19:41 13 l2cap\r"; // Connect to specified wiimote
+//char command[] = "PING 00:1c:be:25:b0:55\r";
+char cresult[]  = "CALL 0\rCONNECT 0 L2CAP 19\r" ;
+char reset[] = "\r\nreset\r\n";   // In commandmode reset modem
+char plus[] = "+++";          // If connected return to commandmode
+char at[] = "AT\r" ;
+char rat[] = "OK\r" ;
+char nu[] = "\000" ;
+
+int sendAndExpect(char *command, char *result, int echo) ;
+
+void Task_Wiimote(void) {
+	int stat = 0 ;
+	OS_Delay(1500) ;
+	XLCDClear() ;
+	if ( sendAndExpect(command, nu , 0 ) == 0 ) {
+	} ;
+	while (1) {
+		OS_Yield() ;
+	}
 }
 
 //******************************************************************************
@@ -196,6 +219,22 @@ void _reset(void) {
 }
 // end reset vector code
 #pragma code
+
+void pressedA()
+{
+    if(started == 0)
+    {
+        started = 1;
+        XLCDPut('R');
+    }
+    else
+    {
+        LeftPWM(0, 0);
+        RightPWM(0, 0);
+        started = 0;
+        XLCDPut('S');
+    }
+}
 
 //******************************************************************************
 //  main
@@ -212,8 +251,11 @@ void main(void) {
     XLCDClear();
 
     OS_Task_Create(1, Task_Display); // be called by scheduler
-    OS_Task_Create(0, Task_Hartbeat); // Show I am alive (called by scheduler)//
-    OS_Task_Create(0, Task_Run); // Run me through the maze (called by scheduler)//
+    OS_Task_Create(1, Task_Hartbeat); // Show I am alive (called by scheduler)//
+    OS_Task_Create(1, Task_Run); // Run me through the maze (called by scheduler)//
+
+    OS_Task_Create(2, Task_Usart); // BT Connection
+    OS_Task_Create(2, Task_Wiimote); // BT Connection
 
     OS_Run(); // Run scheduler
 }
