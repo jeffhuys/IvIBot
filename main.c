@@ -232,7 +232,7 @@ void main(void) {
 
     OS_Task_Create(2, Task_Display); // be called by scheduler
     OS_Task_Create(1, Task_Hartbeat); // Show I am alive (called by scheduler)//
-//    OS_Task_Create(0, Task_Run); // Run me through the maze (called by scheduler)//
+    OS_Task_Create(0, Task_Run); // Run me through the maze (called by scheduler)//
 
     OS_Task_Create(1, Task_Usart); // BT Connection
 
