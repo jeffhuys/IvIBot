@@ -81,7 +81,6 @@ void Task_Hartbeat(void) {
         PORTBbits.RB0 = ~PORTBbits.RB0;
         if (PORTAbits.RA4 == 0) XLCDClear();
         OS_Delay(300);
-        OS_Yield();
     }
 }
 
@@ -123,13 +122,13 @@ void Task_Run(void) {
         frontIR = getAD2();
         rightIR = getAD3();
 
-//        XLCDL2home(); // home but no cursor
-//        PrintbyteToHex(leftIR);
-//        XLCDPut(':');
-//        PrintbyteToHex(frontIR);
-//        XLCDPut(':');
-//        PrintbyteToHex(rightIR);
-//        XLCDPut(':');
+        XLCDL2home(); // home but no cursor
+        PrintbyteToHex(leftIR);
+        XLCDPut(':');
+        PrintbyteToHex(frontIR);
+        XLCDPut(':');
+        PrintbyteToHex(rightIR);
+        XLCDPut(':');
 
         deltaLR = leftIR - rightIR;
 
@@ -186,29 +185,6 @@ void Task_Run(void) {
     }
 }
 
-// BlueGiga Wt12 commands, wiimote connection
-char command[] = "CALL 00:23:cc:9c:fb:dd 13 l2cap\r"; // Connect to specified wiimote
-//char command[] = "CALL 00:23:cc:9d:19:41 13 l2cap\r"; // Connect to specified wiimote
-//char command[] = "PING 00:1c:be:25:b0:55\r";
-char cresult[]  = "CALL 0\rCONNECT 0 L2CAP 19\r" ;
-char reset[] = "\r\nreset\r\n";   // In commandmode reset modem
-char plus[] = "+++";          // If connected return to commandmode
-char at[] = "AT\r" ;
-char rat[] = "OK\r" ;
-char nu[] = "\000" ;
-
-int sendAndExpect(char *command, char *result, int echo) ;
-
-void Task_Wiimote(void) {
-	int stat = 0 ;
-	OS_Delay(1500) ;
-	XLCDClear() ;
-	if ( sendAndExpect(command, nu , 0 ) == 0 ) {
-	} ;
-	while (1) {
-		OS_Yield() ;
-	}
-}
 
 //******************************************************************************
 //** Reset vector mapping **
@@ -225,6 +201,7 @@ void _reset(void) {
 
 void pressedA()
 {
+    XLCDClear();
     if(started == 0)
     {
         started = 1;
@@ -253,12 +230,11 @@ void main(void) {
     XLCDInit(); // initialize the LCD module
     XLCDClear();
 
-    OS_Task_Create(1, Task_Display); // be called by scheduler
+    OS_Task_Create(2, Task_Display); // be called by scheduler
     OS_Task_Create(1, Task_Hartbeat); // Show I am alive (called by scheduler)//
-    OS_Task_Create(1, Task_Run); // Run me through the maze (called by scheduler)//
+//    OS_Task_Create(0, Task_Run); // Run me through the maze (called by scheduler)//
 
-    OS_Task_Create(2, Task_Usart); // BT Connection
-    OS_Task_Create(2, Task_Wiimote); // BT Connection
+    OS_Task_Create(1, Task_Usart); // BT Connection
 
     OS_Run(); // Run scheduler
 }

@@ -1,28 +1,32 @@
 // Init ussrt at 112500 baud for connecting to Wt12
 #include <p18f4550.h>
 #include <osa.h>
+#include "GenericTypeDefs.h"                        // Required
 
 #include "xlcd/xlcd.h"
+#include "port.h"
+
+/** V A R I A B L E **********************************************************/
+unsigned char ReportData[50];
+unsigned char CommandData[50];
+unsigned int  CommandLength = 0 ;
+unsigned char NextCharIn = 0;
+
+unsigned long SystemTime = 0;
+unsigned long counter0   = 0 ;
+unsigned long counter1   = 0 ;
 
 #define mDataRdyUSART() PIR1bits.RCIF
 #define mTxRdyUSART()   TXSTAbits.TRMT
 
-extern void pressedA(void);
-
 void initUSART(void) {
-	char c ;
-// Transmit and recv mode
-	TXSTA = 0b00100100;       	// TX enable BRGH=1
-//            76543210
-	RCSTA = 0b10010000;       	// Single Character RX
-//            76543210
-// Baudrate config	
-	BAUDCON = 0b00001000;     	// BRG16 = 1
-//              76543210
-//   SPBRGH:SPBRG: =((FOSC/Desired Baud Rate)/4) – 1 
-	SPBRGH = 0x00;      	
-	SPBRG  = 0x67;
-	c = RCREG;				    // read clear data 
+    BYTE c ;
+    TXSTA = 0x24;       	// TX enable BRGH=1
+    RCSTA = 0x90;       	// Single Character RX
+    SPBRG = 0x67;
+    SPBRGH = 0x0;
+    BAUDCON = 0x08;     	// BRG16 = 1
+    c = RCREG;				// read
 }//end InitializeUSART
 
 
@@ -35,7 +39,9 @@ void putcUSART(char c) {
 
 void putStrUSART(char *str) {
 	int i = 0 ;
-	while ( str[i] ) putcUSART(str[i++]) ;
+	while ( str[i] ) {
+            putcUSART(str[i++]);
+        }
 }
 
 //  getcUSART() wait until a valid char arrived in usart;
@@ -53,7 +59,7 @@ unsigned char getcUSART(void) {
 	    while ( !mDataRdyUSART() ) ; // Wait in input
     	c = RCREG;
  	}   
-	XLCDPut(c) ;
+	//XLCDPut(c) ;
 // not necessary.  EUSART auto clears the flag when RCREG is cleared
     PIR1bits.RCIF = 0;    // clear Flag
 
@@ -68,6 +74,10 @@ extern void PWM_init(void);
 extern void RightPWM(int pwmDuty, int threshold) ;
 extern void LeftPWM(int pwmDuty, int threshold) ;
 
+void procesCommand(void) ;
+void sendReport(void) ;
+void initTimer(void) ;
+
 #define MVALUE  150 ;
 #define MADD    40	
 int      lm = 0 , rm = 0 ;
@@ -75,137 +85,100 @@ char c;
 unsigned char b1, b2 ;
 
 void Task_Usart(void) {
+    setPortBIO(0x00); // Set port B in output mode
+    setPortDIO(0x00); // Set port D in output mode
 
-	initUSART() ;
+    PORTB=0x55 ;
+    OS_Delay(2000) ;  // modem has to init
+    initUSART();
+    OS_Delay(2000) ;  // modem has to init
+    PORTB= 0 ;
 
-    for (;;) {
-		lm = 0 ;
-		rm = 0 ;
-        OS_Wait(PIR1bits.RCIF ) ;
-	    c = RCREG ; 
-		PIR1bits.RCIF = 0 ;
+    putStrUSART((char *)"reset\n") ;  // RESET modem
+    OS_Delay(500) ;  // modem has to init
 
-		if ( c == 0xa1 ) {
-	        OS_Wait(PIR1bits.RCIF ) ;
-			c = RCREG ; 
-			PIR1bits.RCIF = 0 ;
-	        
-			if ( c == 0x30 ) { 
-				OS_Wait(PIR1bits.RCIF ) ;
-			    b1 = RCREG ; 
-				PIR1bits.RCIF = 0 ;
+    CommandData[0] = 0;
+    NextCharIn = 0;
 
-		        OS_Wait(PIR1bits.RCIF ) ;
-			    b2 = RCREG ; 
-				PIR1bits.RCIF = 0 ;
+    PORTB = 0 ;
 
-				if (b1 & 0x01 ) { // button left
-					rm += MADD ;
-					lm += MADD ;
-					XLCDPut('L');
-				} 
-				if (b1 & 0x02 ) { // button right
-					XLCDPut('R');
-					rm -= MADD ;
-					lm -= MADD ;
-				} 
-				if (b1 & 0x04 ) { // button down
-					rm += MADD ;
-					lm -= MADD ;
-					XLCDPut('D');
-				} 
-				if (b1 & 0x08 ) { // button up
-					rm -= MADD ;
-					lm += MADD ;
-					XLCDPut('U');
-				} 
-				if (b1 & 0x10 ) { // button +
-					XLCDPut('+');
-				} 
+    while (1) {
 
-				if (b2 & 0x01 ) { // button 2
-					lm += MVALUE ;
-					rm += MVALUE ;
-					XLCDPut('2');
-				} 
-				if (b2 & 0x02 ) { // button 1
-					lm -= MVALUE ;
-					rm -= MVALUE ;
-					XLCDPut('1');
-				} 
-				if (b2 & 0x04 ) { // button B
-					XLCDPut('B');
-				} 
-				if (b2 & 0x08 ) { // button A
-					XLCDPut('A');
+        int stuffed = 0; // Are we in a escape sequence?
+        NextCharIn = 0; //
 
-                                        pressedA();
+        OS_Delay(100);
 
-//                                        PORTBbits.RB1= ~PORTBbits.RB1;
-//                                        PORTBbits.RB2= ~PORTBbits.RB2;
-//                                        PORTBbits.RB3= ~PORTBbits.RB3;
-//                                        PORTBbits.RB4= ~PORTBbits.RB4;
-//                                        PORTBbits.RB5= ~PORTBbits.RB5;
-//                                        PORTBbits.RB6= ~PORTBbits.RB6;
-//                                        PORTBbits.RB7= ~PORTBbits.RB7;
-				} 
-				if (b2 & 0x10 ) { // button -
-					XLCDPut('-');
-				} 
-				if (b2 & 0x80 ) { // button home
-					XLCDPut('H');
-				} 
-				//CCPR1L = rm ;
- 				//CCPR2L = lm ;
- 				RightPWM(rm, 0) ;
- 				LeftPWM(lm, 0) ;
-			}
-			else {
-				XLCDPut('?') ;
-			}
- 		}
-		else  { 
-			XLCDPut(c); 
-		}
-                OS_Yield();
+        while (1) {
+
+            OS_Delay(100);
+
+            if (mDataRdyUSART()) { // USART has serial data ready
+                c = getcUSART();
+                if (!stuffed) {
+                    if (c == '\\') { // entered escape sequense stage
+                        stuffed = 1;
+                        continue;
+                    }
+                    stuffed = 0; // Only one byte escaped
+
+                    if (c == 27) { // Recieved ascii ESC reset input buffer and start over
+                        NextCharIn = 0;
+                        continue;
+                    }
+                    if (c == 13 || c == 10) { // ascii NL or CR
+                        CommandData[NextCharIn] = 0;
+                        if (NextCharIn == 0) continue; // Recieved multiple NL or CR start over
+                        else break; // we have a command break out while
+                    }
+                }
+                CommandData[NextCharIn++] = c;
+                if (NextCharIn == 32) break; // Command should not be langer than 32 bytes
+                //PORTB = c ; // small debug on leds.
+            }
+        }
+        CommandLength = NextCharIn; // Can do without, make NextChar in the target
+        procesCommand();
+        sendReport();
+        OS_Delay(50);
     }
 }
 
-int sendAndExpect(char *command, char * result, int echo) {
-	int i = 0 ; 
-    char c ;
-	//XLCDPutRamString(command) ;	
-	//while ( mDataRdyUSART() ) {
-	//	c = getcUSART() ;
-		// sleep so to be sure there is no char in transmission
-	//	OS_Delay(1) ;
-	//} 	
-	
-    while ( command[i] ) {
-		//XLCDPut(command[i]) ;
-		putcUSART(command[i]) ;
-		if ( echo ) {
-			c = getcUSART() ;
-			//XLCDPut(c) ;
-
-			if ( c != command[i] ) {
-				// There is an echo error
-				// Show error
-				//return 0 ; 
-			}
-		}
-		// next part get the expected response
-		i++ ;
-	}
-	i = 0 ;
-    while ( result[i] ) {
-		c = getcUSART() ;
-		if ( c != result[i] ) {
-			// not the expected result
-			return 0 ;
-		} 
-		
-		i++ ;
-	}
-	return 1 ;
-}
+//int sendAndExpect(char *command, char * result, int echo) {
+//	int i = 0 ;
+//    char c ;
+//	//XLCDPutRamString(command) ;
+//	//while ( mDataRdyUSART() ) {
+//	//	c = getcUSART() ;
+//		// sleep so to be sure there is no char in transmission
+//	//	OS_Delay(1) ;
+//	//}
+//
+//    while ( command[i] ) {
+//		//XLCDPut(command[i]) ;
+//		putcUSART(command[i]) ;
+//		if ( echo ) {
+//			c = getcUSART() ;
+//			//XLCDPut(c) ;
+//
+//			if ( c != command[i] ) {
+//				// There is an echo error
+//				// Show error
+//				//return 0 ;
+//			}
+//		}
+//		// next part get the expected response
+//		i++ ;
+//	}
+//	i = 0 ;
+//    while ( result[i] ) {
+//		c = getcUSART() ;
+//		if ( c != result[i] ) {
+//			// not the expected result
+//			return 0 ;
+//		}
+//
+//		i++ ;
+//	}
+//	return 1 ;
+//}

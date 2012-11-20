@@ -22,6 +22,8 @@
 
 #define BYTE unsigned char
 
+BYTE stored_CCPR1L , stored_CCPR2L  ;
+
 //******************************************************************************
 //  PWM_init
 //
@@ -100,4 +102,64 @@ void LeftPWM(int pwmDuty, int threshold) {
         if (pwmDuty > 255) pwmDuty = 255;
         CCPR2L = (char) (255 - (char) pwmDuty); // PIC PWM 1 register 8 high bits in PWM reg (complement)
     }
+}
+
+void setPR2_REG(BYTE value)
+{
+	PR2 = value;
+}
+
+void setT2CON_REG(BYTE value)
+{
+	T2CON = value;
+}
+
+void setCCP1_MODE_REG(BYTE value)
+{
+	CCP1CON = value;
+}
+
+void setCCP2_MODE_REG(BYTE value)
+{
+	CCP2CON = value;
+}
+
+void setCCPR1L_REG(BYTE value)
+{
+	CCPR1L = value;
+}
+
+void setCCPR2L_REG(BYTE value)
+{
+	CCPR2L = value;
+}
+
+BYTE getPR2_REG(void)
+{
+	return (BYTE)PR2;
+}
+
+BYTE getT2CON_REG(void)
+{
+	return (BYTE)T2CON;
+}
+
+BYTE getCCP1_MODE_REG(void)
+{
+	return (BYTE)CCP1CON;
+}
+
+BYTE getCCP2_MODE_REG(void)
+{
+	return (BYTE)CCP2CON;
+}
+
+BYTE getCCPR1L_REG(void)
+{
+	return (BYTE)CCPR1L;
+}
+
+BYTE getCCPR2L_REG(void)
+{
+	return (BYTE)CCPR2L;
 }
