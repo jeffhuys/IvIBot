@@ -165,3 +165,6 @@ pip-log.txt
 ./TiOsa-maze.X/
 *.mk
 Makefile-default.mk
+TiOsa-maze.X/.map
+TiOsa-maze.X/nbproject/Makefile-genesis.properties
+TiOsa-maze.X/nbproject/configurations.xml
