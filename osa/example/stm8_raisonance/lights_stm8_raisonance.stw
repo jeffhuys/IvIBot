@@ -1,0 +1,12 @@
+;	STMicroelectronics Workspace file
+
+[Version]
+Keyword=ST7Workspace-V0.7
+
+[Project0]
+Filename=lights_stm8_raisonance.stp
+Dependencies=
+[Options]
+ActiveProject=lights_stm8_raisonance
+ActiveConfig=Debug
+AddSortedElements=1

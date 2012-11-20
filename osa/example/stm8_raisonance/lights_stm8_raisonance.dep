@@ -1,0 +1,11 @@
+;	STMicroelectronics dependencies file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Root.Source Files...\..\osa.c.Config.0]
+ExternDep=..\..\osa.c c:\osa\OSA.h C:\osa\example\stm8_raisonance\OSAcfg.h c:\osa\port\osa_include.h c:\osa\port\stm8\osa_stm8_raisonance.h "G:\Program Files\Raisonance\Ride\inc\intrins.h" "G:\Program Files\Raisonance\Ride\inc\ST7\INTRIST7.h" c:\osa\kernel\osa_oldnames.h c:\osa\kernel\system\osa_system.h c:\osa\kernel\system\osa_tasks.h c:\osa\kernel\events\osa_bsem.h c:\osa\kernel\events\osa_csem.h c:\osa\kernel\events\osa_flag.h c:\osa\kernel\events\osa_msg.h c:\osa\kernel\events\osa_queue.h c:\osa\kernel\events\osa_smsg.h c:\osa\kernel\events\osa_squeue.h c:\osa\kernel\timers\osa_stimer.h c:\osa\kernel\timers\osa_stimer_old.h c:\osa\kernel\timers\osa_dtimer.h c:\osa\kernel\timers\osa_qtimer.h c:\osa\kernel\timers\osa_ttimer.h c:\osa\kernel\timers\osa_timer.h c:\osa\port\osa_include.c c:\osa\port\stm8\osa_stm8_raisonance.c c:\osa\kernel\timers\osa_dtimer.c c:\osa\kernel\timers\osa_qtimer.c c:\osa\kernel\timers\osa_stimer.c c:\osa\kernel\timers\osa_ttimer.c c:\osa\kernel\events\osa_squeue.c c:\osa\kernel\events\osa_queue.c c:\osa\kernel\events\osa_csem.c c:\osa\kernel\events\osa_bsem.c c:\osa\kernel\system\osa_system.c c:\osa\kernel\system\osa_tasks.c 
+
+[Root.Source Files.lights_stm8_raisonance.c.Config.0]
+ExternDep=lights_stm8_raisonance.c c:\osa\osa.h C:\osa\example\stm8_raisonance\OSAcfg.h c:\osa\port\osa_include.h c:\osa\port\stm8\osa_stm8_raisonance.h "G:\Program Files\Raisonance\Ride\inc\intrins.h" "G:\Program Files\Raisonance\Ride\inc\ST7\INTRIST7.h" c:\osa\kernel\osa_oldnames.h c:\osa\kernel\system\osa_system.h c:\osa\kernel\system\osa_tasks.h c:\osa\kernel\events\osa_bsem.h c:\osa\kernel\events\osa_csem.h c:\osa\kernel\events\osa_flag.h c:\osa\kernel\events\osa_msg.h c:\osa\kernel\events\osa_queue.h c:\osa\kernel\events\osa_smsg.h c:\osa\kernel\events\osa_squeue.h c:\osa\kernel\timers\osa_stimer.h c:\osa\kernel\timers\osa_stimer_old.h c:\osa\kernel\timers\osa_dtimer.h c:\osa\kernel\timers\osa_qtimer.h c:\osa\kernel\timers\osa_ttimer.h c:\osa\kernel\timers\osa_timer.h "G:\Program Files\Raisonance\Ride\inc\STM8\STM8S105C6.h" "G:\Program Files\Raisonance\Ride\inc\STM8\STM8S105C_S.h" 

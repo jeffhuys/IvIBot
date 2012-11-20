@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1228430633</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\osa.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\osa_stm8_iar.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_smsg.h</file>
+      <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_bsem.c</file>
+      <file>$PROJ_DIR$\..\..\osa.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_bsem.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\osa_oldnames.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_stimer_old.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_timer.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\osa.pbi</file>
+      <file>$PROJ_DIR$\..\..\port\stm8\osa_stm8_iar.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_dtimer.h</file>
+      <file>$TOOLKIT_DIR$\config\lnkstm8s105c6.icf</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_flag.h</file>
+      <file>$PROJ_DIR$\..\..\port\osa_include.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_csem.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_dtimer.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_system.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\lights_stm8_cosmic.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\vregs.inc</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_tasks.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_queue.c</file>
+      <file>$TOOLKIT_DIR$\inc\io_macros.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_squeue.h</file>
+      <file>$PROJ_DIR$\..\..\port\osa_include.c</file>
+      <file>$PROJ_DIR$\..\..\port\stm8\osa_stm8_iar.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\lights_stm8_iar.pbd</file>
+      <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_msg.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\yyy.out</file>
+      <file>$TOOLKIT_DIR$\inc\iostm8.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_qtimer.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_queue.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_qtimer.h</file>
+      <file>$PROJ_DIR$\Debug\List\osa_stm8_iar.lst</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_ttimer.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_system.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_ttimer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_csem.h</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\..\..\osa_stm8_iar.s</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_stimer.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_tasks.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\lights_stm8_iar.pbi</file>
+      <file>$PROJ_DIR$\OSAcfg.h</file>
+      <file>$PROJ_DIR$\lights_stm8_iar.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_squeue.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\lights_stm8_iar.o</file>
+      <file>$PROJ_DIR$\..\..\port\stm8\osa_stm8_iar.s</file>
+      <file>$PROJ_DIR$\..\..\osa.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_stimer.h</file>
+      <file>$PROJ_DIR$\lights_stm8_cosmic.c</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\lights_stm8_iar.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 46 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\yyy.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 14 50 0 1 29 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\osa_stm8_iar.s</name>
+      <outputs>
+        <tool>
+          <name>ASTM8</name>
+          <file> 1</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\lights_stm8_iar.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 47 16 27 8 38 22 7 40 15 30 34 3 25 53 9 13 35 39 10</file>
+        </tool>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 6 47 16 27 8 38 22 7 40 15 30 34 3 25 53 9 13 35 39 10 32 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\port\stm8\osa_stm8_iar.s</name>
+      <outputs>
+        <tool>
+          <name>ASTM8</name>
+          <file> 1 36</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ASTM8</name>
+          <file> 21</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\osa.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 11</file>
+        </tool>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 47 16 27 8 38 22 7 40 15 30 34 3 25 53 9 13 35 39 10 26 12 18 33 43 37 49 23 17 5 19 45</file>
+        </tool>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 6 47 16 27 8 38 22 7 40 15 30 34 3 25 53 9 13 35 39 10 26 12 18 33 43 37 49 23 17 5 19 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\lights_stm8_cosmic.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 47 16 27 8 38 22 7 40 15 30 34 3 25 53 9 13 35 39 10</file>
+        </tool>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 6 47 16 27 8 38 22 7 40 15 30 34 3 25 53 9 13 35 39 10 32 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\lights_stm8_cosmic.c</name>
+      <tool>ICCSTM8</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

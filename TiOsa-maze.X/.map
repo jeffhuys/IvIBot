@@ -1,0 +1,1066 @@
+MPLINK 4.40, Linker
+Linker Map File - Created Tue Nov 20 11:49:58 2012
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+               _entry_scn       code   0x000000    program   0x000006
+  _RESET_INTERRUPT_VECTOR       code   0x001000    program   0x000006
+       InterruptVectorLow       code   0x001018    program   0x000006
+                   .cinit    romdata   0x00102a    program   0x000026
+              .code_osa.o       code   0x001050    program   0x000724
+             .code_main.o       code   0x001774    program   0x00062e
+            .code_usart.o       code   0x001da2    program   0x000420
+             .code_xlcd.o       code   0x0021c2    program   0x000290
+              .code_pwm.o       code   0x002452    program   0x0001f6
+       .code_Quadrature.o       code   0x002648    program   0x00018c
+           .code_Timer0.o       code   0x0027d4    program   0x0000b4
+               _cinit_scn       code   0x002888    program   0x00009e
+        .code_xlcddelay.o       code   0x002926    program   0x000056
+            .code_myadc.o       code   0x00297c    program   0x00003a
+             .stringtable    romdata   0x0029b6    program   0x000022
+                    .code       code   0x0029d8    program   0x000020
+             _startup_scn       code   0x0029f8    program   0x00001c
+           .code___init.o       code   0x002a14    program   0x000002
+        .romdata___init.o    romdata   0x002a16    program   0x000000
+         .romdata_myadc.o    romdata   0x002a16    program   0x000000
+         .romdata_c018i.o    romdata   0x002a16    program   0x000000
+         .romdata_usart.o    romdata   0x002a16    program   0x000000
+           .romdata_pwm.o    romdata   0x002a16    program   0x000000
+     .romdata_xlcddelay.o    romdata   0x002a16    program   0x000000
+     .idata_xlcddelay.o_i    romdata   0x002a16    program   0x000000
+          .romdata_xlcd.o    romdata   0x002a16    program   0x000000
+          .idata_xlcd.o_i    romdata   0x002a16    program   0x000001
+          .romdata_main.o    romdata   0x002a16    program   0x000000
+    .romdata_Quadrature.o    romdata   0x002a16    program   0x000000
+           .romdata_osa.o    romdata   0x002a16    program   0x000000
+        .romdata_Timer0.o    romdata   0x002a16    program   0x000000
+         .idata_usart.o_i    romdata   0x002a17    program   0x000004
+          .idata_main.o_i    romdata   0x002a1b    program   0x000023
+         .idata_myadc.o_i    romdata   0x002a1b    program   0x000000
+           .idata_osa.o_i    romdata   0x002a1b    program   0x000000
+           .idata_pwm.o_i    romdata   0x002a1b    program   0x000000
+        .idata_Timer0.o_i    romdata   0x002a3e    program   0x000000
+    .idata_Quadrature.o_i    romdata   0x002a3e    program   0x000000
+        .idata___init.o_i    romdata   0x002a3e    program   0x000000
+            .code_c018i.o       code   0x002a3e    program   0x000000
+         .idata_c018i.o_i    romdata   0x002a3e    program   0x000000
+                 os_bsems      udata   0x000000       data   0x000024
+                 .tmpdata      udata   0x000024       data   0x000008
+                   ACCESS      udata   0x00002c       data   0x000006
+                MATH_DATA      udata   0x000032       data   0x000002
+            .idata_main.o      idata   0x000060       data   0x000023
+            .udata_main.o      udata   0x000083       data   0x000019
+           .udata_c018i.o      udata   0x00009c       data   0x00000a
+      .udata_Quadrature.o      udata   0x0000a6       data   0x000008
+           .idata_usart.o      idata   0x0000ae       data   0x000004
+           .udata_usart.o      udata   0x0000b2       data   0x000003
+            .idata_xlcd.o      idata   0x0000b5       data   0x000001
+           .idata_myadc.o      idata   0x0000b6       data   0x000000
+          .udata___init.o      udata   0x0000b6       data   0x000000
+          .idata___init.o      idata   0x0000b6       data   0x000000
+           .udata_myadc.o      udata   0x0000b6       data   0x000000
+             .idata_pwm.o      idata   0x0000b6       data   0x000000
+             .udata_pwm.o      udata   0x0000b6       data   0x000000
+       .idata_xlcddelay.o      idata   0x0000b6       data   0x000000
+       .udata_xlcddelay.o      udata   0x0000b6       data   0x000000
+            .udata_xlcd.o      udata   0x0000b6       data   0x000000
+      .idata_Quadrature.o      idata   0x0000b6       data   0x000000
+          .idata_Timer0.o      idata   0x0000b6       data   0x000000
+          .udata_Timer0.o      udata   0x0000b6       data   0x000000
+             .idata_osa.o      idata   0x0000b6       data   0x000000
+             .udata_osa.o      udata   0x0000b6       data   0x000000
+           .idata_c018i.o      idata   0x0000b6       data   0x000000
+                   .stack      udata   0x000300       data   0x000100
+            SFR_UNBANKED0      udata   0x000f62       data   0x00009e
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000005      
+                            0x001000    0x001005      
+                            0x001018    0x00101d      
+                            0x00102a    0x002a3d      
+            6694 out of 33048 program addresses used, program memory utilization is 20%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 ADC_init   0x00297c    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\myadc.c
+               InitTimer0   0x0027d4    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Timer0.c
+      InterruptHandlerLow   0x0027ec    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Timer0.c
+       InterruptVectorLow   0x001018    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Timer0.c
+                  LeftPWM   0x002562    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\pwm\pwm.c
+                    OS_DI   0x001140    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+  OS_EnterCriticalSection   0x00164a    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_system.c
+                  OS_Init   0x001632    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_system.c
+  OS_LeaveCriticalSection   0x001670    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_system.c
+                 OS_Timer   0x001696    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_system.c
+                 PWM_init   0x002452    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\pwm\pwm.c
+           PrintbyteToHex   0x001774    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                 Q_Update   0x002648    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+                 RightPWM   0x00247c    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\pwm\pwm.c
+             Task_Display   0x001832    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+            Task_Hartbeat   0x001968    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+          Task_Quadrature   0x00275a    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+                 Task_Run   0x0019aa    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+               Task_Usart   0x001e8e    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+              XLCDCommand   0x002256    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+                XLCDDelay   0x002964    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcddelay.c
+            XLCDDelay15ms   0x002926    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcddelay.c
+             XLCDDelay4ms   0x00293e    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcddelay.c
+                  XLCDGet   0x002384    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+              XLCDGetAddr   0x002338    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+                 XLCDInit   0x0021c2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+               XLCDIsBusy   0x0022e8    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+                  XLCDPut   0x0022a6    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+         XLCDPutRamString   0x002412    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+         XLCDPutRomString   0x0023ce    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+          XLCD_Delay500ns   0x002956    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcddelay.c
+           _OS_CheckEvent   0x001176    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+_OS_ClrReadySetClrCanContinue   0x00109e    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+          _OS_Csem_Signal   0x0015b2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_csem.c
+        _OS_Csem_Signal_I   0x0015f2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_csem.c
+               _OS_DI_INT   0x00114c    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+        _OS_EnterWaitMode   0x00108e    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+      _OS_EnterWaitModeTO   0x001096    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+            _OS_InitDelay   0x0010ce    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+           _OS_JumpToTask   0x001050    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+            _OS_Queue_Get   0x0014e4    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_queue.c
+           _OS_Queue_Send   0x001390    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_queue.c
+                   _OS_RI   0x00115a    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+               _OS_RI_INT   0x001168    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+         _OS_ReturnNoSave   0x00108a    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+           _OS_ReturnSave   0x001072    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+     _OS_SET_FSR_CUR_TASK   0x0010be    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+           _OS_Squeue_Get   0x0012da    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_squeue.c
+          _OS_Squeue_Send   0x0011a2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_squeue.c
+          _OS_Task_Create   0x0016cc    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_tasks.c
+                 _RI_EXIT   0x001166    program     static                          
+             _RI_INT_EXIT   0x001174    program     static                          
+  __OS_SET_FSR_CUR_TASK_W   0x0010c6    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+           ___do_lbl00002   0x00188e    program     static                          
+           ___do_lbl00003   0x00188e    program     static                          
+           ___do_lbl00004   0x001876    program     static                          
+           ___do_lbl00007   0x0018be    program     static                          
+           ___do_lbl00008   0x0018be    program     static                          
+           ___do_lbl00009   0x0018be    program     static                          
+           ___do_lbl00010   0x0018be    program     static                          
+           ___do_lbl00011   0x0018a6    program     static                          
+           ___do_lbl00012   0x00188e    program     static                          
+           ___do_lbl00013   0x001920    program     static                          
+           ___do_lbl00014   0x001920    program     static                          
+           ___do_lbl00015   0x001920    program     static                          
+           ___do_lbl00016   0x001920    program     static                          
+           ___do_lbl00017   0x001908    program     static                          
+           ___do_lbl00018   0x0018f0    program     static                          
+         ___else_lbl00021   0x00118a    program     static                          
+         ___else_lbl00027   0x00209e    program     static                          
+         ___else_lbl00029   0x0020aa    program     static                          
+         ___else_lbl00037   0x001bb2    program     static                          
+         ___else_lbl00039   0x001a90    program     static                          
+          ___for_lbl00005   0x001952    program     static                          
+          ___for_lbl00006   0x001954    program     static                          
+          ___for_lbl00013   0x0020b4    program     static                          
+          ___for_lbl00014   0x0020b6    program     static                          
+          ___for_lbl00016   0x0027d0    program     static                          
+          ___for_lbl00017   0x0027d2    program     static                          
+          ___for_lbl00018   0x00278c    program     static                          
+          ___for_lbl00019   0x00188e    program     static                          
+          ___for_lbl00021   0x0019a6    program     static                          
+          ___for_lbl00022   0x0019a8    program     static                          
+          ___for_lbl00024   0x001980    program     static                          
+          ___for_lbl00026   0x001c7e    program     static                          
+          ___for_lbl00027   0x001c80    program     static                          
+          ___for_lbl00030   0x001e90    program     static                          
+          ___for_lbl00040   0x0019c0    program     static                          
+           ___if_lbl00001   0x001060    program     static                          
+           ___if_lbl00015   0x001f50    program     static                          
+           ___if_lbl00016   0x001f78    program     static                          
+           ___if_lbl00017   0x001fa0    program     static                          
+           ___if_lbl00018   0x001fc8    program     static                          
+           ___if_lbl00019   0x001fd8    program     static                          
+           ___if_lbl00019   0x001186    program     static                          
+           ___if_lbl00020   0x00118c    program     static                          
+           ___if_lbl00020   0x002000    program     static                          
+           ___if_lbl00021   0x002028    program     static                          
+           ___if_lbl00022   0x002038    program     static                          
+           ___if_lbl00023   0x00119e    program     static                          
+           ___if_lbl00023   0x002048    program     static                          
+           ___if_lbl00023   0x001990    program     static                          
+           ___if_lbl00024   0x002058    program     static                          
+           ___if_lbl00025   0x002068    program     static                          
+           ___if_lbl00026   0x0020a8    program     static                          
+           ___if_lbl00028   0x0020b4    program     static                          
+           ___if_lbl00031   0x001b78    program     static                          
+           ___if_lbl00032   0x001bb0    program     static                          
+           ___if_lbl00033   0x001bb0    program     static                          
+           ___if_lbl00034   0x001c18    program     static                          
+           ___if_lbl00035   0x001c74    program     static                          
+           ___if_lbl00036   0x001c74    program     static                          
+           ___if_lbl00038   0x001c74    program     static                          
+       ___return_lbl00000   0x00293c    program     static                          
+       ___return_lbl00000   0x001070    program     static                          
+       ___return_lbl00000   0x000004    program     static                          
+       ___return_lbl00001   0x00101c    program     static                          
+       ___return_lbl00001   0x001954    program     static                          
+       ___return_lbl00001   0x002a12    program     static                          
+       ___return_lbl00001   0x002954    program     static                          
+       ___return_lbl00002   0x002924    program     static                          
+       ___return_lbl00002   0x002962    program     static                          
+       ___return_lbl00002   0x001088    program     static                          
+       ___return_lbl00003   0x00297a    program     static                          
+       ___return_lbl00003   0x00108c    program     static                          
+       ___return_lbl00004   0x001094    program     static                          
+       ___return_lbl00005   0x00109c    program     static                          
+       ___return_lbl00009   0x0010c4    program     static                          
+       ___return_lbl00010   0x0010cc    program     static                          
+       ___return_lbl00012   0x0020b6    program     static                          
+       ___return_lbl00014   0x00114a    program     static                          
+       ___return_lbl00015   0x0027d2    program     static                          
+       ___return_lbl00015   0x001158    program     static                          
+       ___return_lbl00016   0x001166    program     static                          
+       ___return_lbl00017   0x001174    program     static                          
+       ___return_lbl00018   0x0011a0    program     static                          
+       ___return_lbl00020   0x0019a8    program     static                          
+       ___return_lbl00025   0x001c80    program     static                          
+       ___return_lbl00041   0x001004    program     static                          
+       ___return_lbl00047   0x0016ca    program     static                          
+                   __init   0x002a14    program     extern C:\MCC18\v3_39\src\traditional\stdclib\__init.c
+               __string_0   0x0029c7    program     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+               __string_1   0x0029b6    program     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+               __tmplbl_0   0x001eac    program     static                          
+               __tmplbl_0   0x001198    program     static                          
+               __tmplbl_0   0x00189e    program     static                          
+               __tmplbl_1   0x001192    program     static                          
+               __tmplbl_1   0x00189a    program     static                          
+               __tmplbl_1   0x001ea8    program     static                          
+              __tmplbl_16   0x001aae    program     static                          
+              __tmplbl_17   0x001ad6    program     static                          
+              __tmplbl_18   0x001afe    program     static                          
+              __tmplbl_19   0x001b24    program     static                          
+               __tmplbl_2   0x001ed4    program     static                          
+               __tmplbl_2   0x001900    program     static                          
+              __tmplbl_20   0x001bd8    program     static                          
+              __tmplbl_21   0x001c34    program     static                          
+               __tmplbl_3   0x0018fc    program     static                          
+               __tmplbl_3   0x001ed0    program     static                          
+               __tmplbl_4   0x001b2e    program     static                          
+               __tmplbl_4   0x001efc    program     static                          
+               __tmplbl_5   0x001ef8    program     static                          
+               __tmplbl_5   0x001b08    program     static                          
+               __tmplbl_6   0x001f1a    program     static                          
+               __tmplbl_6   0x001ae0    program     static                          
+               __tmplbl_7   0x001f16    program     static                          
+               __tmplbl_7   0x001aba    program     static                          
+            __zero_memory   0x0029d8    program     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                _do_cinit   0x002888    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                   _entry   0x000000    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                   _reset   0x001000    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                 _startup   0x0029f8    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                compare_l   0x0029ee    program     static C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                copy_loop   0x0028fa    program     static                          
+            copy_one_byte   0x002900    program     static                          
+                     done   0x002924    program     static                          
+             done_copying   0x00290e    program     static                          
+                    getAD   0x00298c    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\myadc.c
+                getcUSART   0x001e56    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                initUSART   0x001da2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                     loop   0x002a08    program     static                          
+                   loop_h   0x0029e6    program     static C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   loop_l   0x0029f0    program     static C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     main   0x001c82    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+              putStrUSART   0x001dec    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                putcUSART   0x001dcc    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+            sendAndExpect   0x0020b8    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                     test   0x0028a2    program     static                          
+               zero_block   0x0029e6    program     static C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADCON0   0x000fc2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               ADCON0bits   0x000fc2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADCON1   0x000fc1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               ADCON1bits   0x000fc1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADCON2   0x000fc0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               ADCON2bits   0x000fc0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    ADRES   0x000fc3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADRESH   0x000fc4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADRESL   0x000fc3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  BAUDCON   0x000fb8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              BAUDCONbits   0x000fb8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  BAUDCTL   0x000fb8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              BAUDCTLbits   0x000fb8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      BSR   0x000fe0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCP1AS   0x000fb6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               CCP1ASbits   0x000fb6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  CCP1CON   0x000fbd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              CCP1CONbits   0x000fbd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  CCP1DEL   0x000fb7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              CCP1DELbits   0x000fb7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  CCP2CON   0x000fba       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              CCP2CONbits   0x000fba       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    CCPR1   0x000fbe       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCPR1H   0x000fbf       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCPR1L   0x000fbe       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    CCPR2   0x000fbb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCPR2H   0x000fbc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCPR2L   0x000fbb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    CMCON   0x000fb4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                CMCONbits   0x000fb4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CVRCON   0x000fb5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               CVRCONbits   0x000fb5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRA   0x000f92       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDRAbits   0x000f92       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRB   0x000f93       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDRBbits   0x000f93       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRC   0x000f94       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDRCbits   0x000f94       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRD   0x000f95       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDRDbits   0x000f95       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRE   0x000f96       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDREbits   0x000f96       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  ECCP1AS   0x000fb6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              ECCP1ASbits   0x000fb6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 ECCP1CON   0x000fbd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+             ECCP1CONbits   0x000fbd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 ECCP1DEL   0x000fb7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+             ECCP1DELbits   0x000fb7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    EEADR   0x000fa9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   EECON1   0x000fa6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               EECON1bits   0x000fa6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   EECON2   0x000fa7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   EEDATA   0x000fa8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     FSR0   0x000fe9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR0H   0x000fea       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR0L   0x000fe9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     FSR1   0x000fe1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR1H   0x000fe2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR1L   0x000fe1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     FSR2   0x000fd9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR2H   0x000fda       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR2L   0x000fd9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  HLVDCON   0x000fd2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              HLVDCONbits   0x000fd2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    INDF0   0x000fef       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    INDF1   0x000fe7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    INDF2   0x000fdf       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   INTCON   0x000ff2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  INTCON2   0x000ff1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              INTCON2bits   0x000ff1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  INTCON3   0x000ff0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              INTCON3bits   0x000ff0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               INTCONbits   0x000ff2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     IPR1   0x000f9f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 IPR1bits   0x000f9f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     IPR2   0x000fa2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 IPR2bits   0x000fa2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATA   0x000f89       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATAbits   0x000f89       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATB   0x000f8a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATBbits   0x000f8a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATC   0x000f8b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATCbits   0x000f8b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATD   0x000f8c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATDbits   0x000f8c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATE   0x000f8d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATEbits   0x000f8d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   LVDCON   0x000fd2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               LVDCONbits   0x000fd2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   OSCCON   0x000fd3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               OSCCONbits   0x000fd3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  OSCTUNE   0x000f9b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              OSCTUNEbits   0x000f9b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                       PC   0x000ff9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      PCL   0x000ff9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PCLATH   0x000ffa       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PCLATU   0x000ffb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PIE1   0x000f9d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 PIE1bits   0x000f9d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PIE2   0x000fa0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 PIE2bits   0x000fa0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PIR1   0x000f9e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 PIR1bits   0x000f9e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PIR2   0x000fa1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 PIR2bits   0x000fa1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PLUSW0   0x000feb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PLUSW1   0x000fe3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PLUSW2   0x000fdb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTA   0x000f80       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTAbits   0x000f80       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTB   0x000f81       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTBbits   0x000f81       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTC   0x000f82       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTCbits   0x000f82       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTD   0x000f83       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTDbits   0x000f83       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTE   0x000f84       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTEbits   0x000f84       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTDEC0   0x000fed       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTDEC1   0x000fe5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTDEC2   0x000fdd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTINC0   0x000fee       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTINC1   0x000fe6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTINC2   0x000fde       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      PR2   0x000fcb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  PREINC0   0x000fec       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  PREINC1   0x000fe4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  PREINC2   0x000fdc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PROD   0x000ff3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PRODH   0x000ff4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PRODL   0x000ff3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     RCON   0x000fd0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 RCONbits   0x000fd0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    RCREG   0x000fae       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    RCSTA   0x000fab       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                RCSTAbits   0x000fab       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     SIGN   0x000032       data     extern C:\MCC18\v3_39\src\traditional\math\cmath18.asm
+                    SPBRG   0x000faf       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SPBRGH   0x000fb0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SPPCFG   0x000f63       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               SPPCFGbits   0x000f63       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SPPCON   0x000f65       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               SPPCONbits   0x000f65       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  SPPDATA   0x000f62       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SPPEPS   0x000f64       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               SPPEPSbits   0x000f64       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SSPADD   0x000fc8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SSPBUF   0x000fc9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  SSPCON1   0x000fc6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              SSPCON1bits   0x000fc6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  SSPCON2   0x000fc5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              SSPCON2bits   0x000fc5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  SSPSTAT   0x000fc7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              SSPSTATbits   0x000fc7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   STATUS   0x000fd8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               STATUSbits   0x000fd8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   STKPTR   0x000ffc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               STKPTRbits   0x000ffc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    T0CON   0x000fd5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                T0CONbits   0x000fd5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    T1CON   0x000fcd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                T1CONbits   0x000fcd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    T2CON   0x000fca       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                T2CONbits   0x000fca       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    T3CON   0x000fb1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                T3CONbits   0x000fb1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   TABLAT   0x000ff5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   TBLPTR   0x000ff6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  TBLPTRH   0x000ff7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  TBLPTRL   0x000ff6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  TBLPTRU   0x000ff8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR0H   0x000fd7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR0L   0x000fd6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR1H   0x000fcf       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR1L   0x000fce       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     TMR2   0x000fcc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR3H   0x000fb3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR3L   0x000fb2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      TOS   0x000ffd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     TOSH   0x000ffe       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     TOSL   0x000ffd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     TOSU   0x000fff       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISA   0x000f92       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISAbits   0x000f92       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISB   0x000f93       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISBbits   0x000f93       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISC   0x000f94       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISCbits   0x000f94       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISD   0x000f95       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISDbits   0x000f95       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISE   0x000f96       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISEbits   0x000f96       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TXREG   0x000fad       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TXSTA   0x000fac       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TXSTAbits   0x000fac       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UADDR   0x000f6e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UADDRbits   0x000f6e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UCFG   0x000f6f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UCFGbits   0x000f6f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UCON   0x000f6d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UCONbits   0x000f6d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEIE   0x000f6b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEIEbits   0x000f6b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEIR   0x000f6a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEIRbits   0x000f6a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP0   0x000f70       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP0bits   0x000f70       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP1   0x000f71       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP10   0x000f7a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP10bits   0x000f7a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP11   0x000f7b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP11bits   0x000f7b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP12   0x000f7c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP12bits   0x000f7c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP13   0x000f7d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP13bits   0x000f7d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP14   0x000f7e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP14bits   0x000f7e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP15   0x000f7f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP15bits   0x000f7f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP1bits   0x000f71       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP2   0x000f72       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP2bits   0x000f72       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP3   0x000f73       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP3bits   0x000f73       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP4   0x000f74       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP4bits   0x000f74       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP5   0x000f75       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP5bits   0x000f75       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP6   0x000f76       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP6bits   0x000f76       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP7   0x000f77       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP7bits   0x000f77       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP8   0x000f78       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP8bits   0x000f78       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP9   0x000f79       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP9bits   0x000f79       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UFRM   0x000f66       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UFRMH   0x000f67       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UFRMHbits   0x000f67       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UFRML   0x000f66       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UFRMLbits   0x000f66       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      UIE   0x000f69       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  UIEbits   0x000f69       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      UIR   0x000f68       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  UIRbits   0x000f68       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    USTAT   0x000f6c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                USTATbits   0x000f6c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   WDTCON   0x000fd1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               WDTCONbits   0x000fd1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     WREG   0x000fe8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+             WelcomeLine1   0x000070       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+             WelcomeLine2   0x000072       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+             _OS_BestTask   0x000000       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+        _OS_Best_Priority   0x000004       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+                _OS_Bsems   0x000005       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_bsem.c
+              _OS_CurTask   0x000030       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+                _OS_Flags   0x00002c       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+             _OS_LastTask   0x000002       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+                _OS_Tasks   0x000006       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_tasks.c
+                 _OS_Temp   0x00002d       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+                _OS_TempH   0x00002f       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+               _OS_Temp_I   0x00002e       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+                __FPFLAGS   0x000033       data     extern C:\MCC18\v3_39\src\traditional\math\cmath18.asm
+            __FPFLAGSbits   0x000033       data     extern C:\MCC18\v3_39\src\traditional\math\cmath18.asm
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\myadc.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\pwm\pwm.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_tasks.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                _vXLCDreg   0x0000b5       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+                       b1   0x0000b3       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                       b2   0x0000b4       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                   buffer   0x000088       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                        c   0x0000b2       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                curr_byte   0x00009f       data     static C:\MCC18\v3_39\src\traditional\startup\c018i.c
+               curr_entry   0x0000a1       data     static C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                 data_ptr   0x0000a3       data     static C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                  deltaLR   0x00007a       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+               deltaPower   0x00007c       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                  frontIR   0x000074       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                  hexChar   0x000060       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                 lastTurn   0x000082       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                   leftIR   0x000076       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                leftPower   0x00007e       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                       lm   0x0000ae       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                     prom   0x00009c       data     static C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                       q1   0x0000a6       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+                       q2   0x0000aa       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+                    queue   0x000083       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                  rightIR   0x000078       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+               rightPower   0x000080       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                       rm   0x0000b0       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   _entry   0x000000    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
+       ___return_lbl00000   0x000004    program     static                          
+                   _reset   0x001000    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+       ___return_lbl00041   0x001004    program     static                          
+       InterruptVectorLow   0x001018    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Timer0.c
+       ___return_lbl00001   0x00101c    program     static                          
+           _OS_JumpToTask   0x001050    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+           ___if_lbl00001   0x001060    program     static                          
+       ___return_lbl00000   0x001070    program     static                          
+           _OS_ReturnSave   0x001072    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+       ___return_lbl00002   0x001088    program     static                          
+         _OS_ReturnNoSave   0x00108a    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+       ___return_lbl00003   0x00108c    program     static                          
+        _OS_EnterWaitMode   0x00108e    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+       ___return_lbl00004   0x001094    program     static                          
+      _OS_EnterWaitModeTO   0x001096    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+       ___return_lbl00005   0x00109c    program     static                          
+_OS_ClrReadySetClrCanContinue   0x00109e    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+     _OS_SET_FSR_CUR_TASK   0x0010be    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+       ___return_lbl00009   0x0010c4    program     static                          
+  __OS_SET_FSR_CUR_TASK_W   0x0010c6    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+       ___return_lbl00010   0x0010cc    program     static                          
+            _OS_InitDelay   0x0010ce    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+                    OS_DI   0x001140    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+       ___return_lbl00014   0x00114a    program     static                          
+               _OS_DI_INT   0x00114c    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+       ___return_lbl00015   0x001158    program     static                          
+                   _OS_RI   0x00115a    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+       ___return_lbl00016   0x001166    program     static                          
+                 _RI_EXIT   0x001166    program     static                          
+               _OS_RI_INT   0x001168    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+             _RI_INT_EXIT   0x001174    program     static                          
+       ___return_lbl00017   0x001174    program     static                          
+           _OS_CheckEvent   0x001176    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\port\pic18\osa_pic18_mplabc.c
+           ___if_lbl00019   0x001186    program     static                          
+         ___else_lbl00021   0x00118a    program     static                          
+           ___if_lbl00020   0x00118c    program     static                          
+               __tmplbl_1   0x001192    program     static                          
+               __tmplbl_0   0x001198    program     static                          
+           ___if_lbl00023   0x00119e    program     static                          
+       ___return_lbl00018   0x0011a0    program     static                          
+          _OS_Squeue_Send   0x0011a2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_squeue.c
+           _OS_Squeue_Get   0x0012da    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_squeue.c
+           _OS_Queue_Send   0x001390    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_queue.c
+            _OS_Queue_Get   0x0014e4    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_queue.c
+          _OS_Csem_Signal   0x0015b2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_csem.c
+        _OS_Csem_Signal_I   0x0015f2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_csem.c
+                  OS_Init   0x001632    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_system.c
+  OS_EnterCriticalSection   0x00164a    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_system.c
+  OS_LeaveCriticalSection   0x001670    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_system.c
+                 OS_Timer   0x001696    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_system.c
+       ___return_lbl00047   0x0016ca    program     static                          
+          _OS_Task_Create   0x0016cc    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_tasks.c
+           PrintbyteToHex   0x001774    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+             Task_Display   0x001832    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+           ___do_lbl00004   0x001876    program     static                          
+          ___for_lbl00019   0x00188e    program     static                          
+           ___do_lbl00002   0x00188e    program     static                          
+           ___do_lbl00012   0x00188e    program     static                          
+           ___do_lbl00003   0x00188e    program     static                          
+               __tmplbl_1   0x00189a    program     static                          
+               __tmplbl_0   0x00189e    program     static                          
+           ___do_lbl00011   0x0018a6    program     static                          
+           ___do_lbl00007   0x0018be    program     static                          
+           ___do_lbl00008   0x0018be    program     static                          
+           ___do_lbl00009   0x0018be    program     static                          
+           ___do_lbl00010   0x0018be    program     static                          
+           ___do_lbl00018   0x0018f0    program     static                          
+               __tmplbl_3   0x0018fc    program     static                          
+               __tmplbl_2   0x001900    program     static                          
+           ___do_lbl00017   0x001908    program     static                          
+           ___do_lbl00016   0x001920    program     static                          
+           ___do_lbl00015   0x001920    program     static                          
+           ___do_lbl00014   0x001920    program     static                          
+           ___do_lbl00013   0x001920    program     static                          
+          ___for_lbl00005   0x001952    program     static                          
+          ___for_lbl00006   0x001954    program     static                          
+       ___return_lbl00001   0x001954    program     static                          
+            Task_Hartbeat   0x001968    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+          ___for_lbl00024   0x001980    program     static                          
+           ___if_lbl00023   0x001990    program     static                          
+          ___for_lbl00021   0x0019a6    program     static                          
+          ___for_lbl00022   0x0019a8    program     static                          
+       ___return_lbl00020   0x0019a8    program     static                          
+                 Task_Run   0x0019aa    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+          ___for_lbl00040   0x0019c0    program     static                          
+         ___else_lbl00039   0x001a90    program     static                          
+              __tmplbl_16   0x001aae    program     static                          
+               __tmplbl_7   0x001aba    program     static                          
+              __tmplbl_17   0x001ad6    program     static                          
+               __tmplbl_6   0x001ae0    program     static                          
+              __tmplbl_18   0x001afe    program     static                          
+               __tmplbl_5   0x001b08    program     static                          
+              __tmplbl_19   0x001b24    program     static                          
+               __tmplbl_4   0x001b2e    program     static                          
+           ___if_lbl00031   0x001b78    program     static                          
+           ___if_lbl00033   0x001bb0    program     static                          
+           ___if_lbl00032   0x001bb0    program     static                          
+         ___else_lbl00037   0x001bb2    program     static                          
+              __tmplbl_20   0x001bd8    program     static                          
+           ___if_lbl00034   0x001c18    program     static                          
+              __tmplbl_21   0x001c34    program     static                          
+           ___if_lbl00036   0x001c74    program     static                          
+           ___if_lbl00035   0x001c74    program     static                          
+           ___if_lbl00038   0x001c74    program     static                          
+          ___for_lbl00026   0x001c7e    program     static                          
+       ___return_lbl00025   0x001c80    program     static                          
+          ___for_lbl00027   0x001c80    program     static                          
+                     main   0x001c82    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                initUSART   0x001da2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                putcUSART   0x001dcc    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+              putStrUSART   0x001dec    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                getcUSART   0x001e56    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+               Task_Usart   0x001e8e    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+          ___for_lbl00030   0x001e90    program     static                          
+               __tmplbl_1   0x001ea8    program     static                          
+               __tmplbl_0   0x001eac    program     static                          
+               __tmplbl_3   0x001ed0    program     static                          
+               __tmplbl_2   0x001ed4    program     static                          
+               __tmplbl_5   0x001ef8    program     static                          
+               __tmplbl_4   0x001efc    program     static                          
+               __tmplbl_7   0x001f16    program     static                          
+               __tmplbl_6   0x001f1a    program     static                          
+           ___if_lbl00015   0x001f50    program     static                          
+           ___if_lbl00016   0x001f78    program     static                          
+           ___if_lbl00017   0x001fa0    program     static                          
+           ___if_lbl00018   0x001fc8    program     static                          
+           ___if_lbl00019   0x001fd8    program     static                          
+           ___if_lbl00020   0x002000    program     static                          
+           ___if_lbl00021   0x002028    program     static                          
+           ___if_lbl00022   0x002038    program     static                          
+           ___if_lbl00023   0x002048    program     static                          
+           ___if_lbl00024   0x002058    program     static                          
+           ___if_lbl00025   0x002068    program     static                          
+         ___else_lbl00027   0x00209e    program     static                          
+           ___if_lbl00026   0x0020a8    program     static                          
+         ___else_lbl00029   0x0020aa    program     static                          
+           ___if_lbl00028   0x0020b4    program     static                          
+          ___for_lbl00013   0x0020b4    program     static                          
+          ___for_lbl00014   0x0020b6    program     static                          
+       ___return_lbl00012   0x0020b6    program     static                          
+            sendAndExpect   0x0020b8    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                 XLCDInit   0x0021c2    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+              XLCDCommand   0x002256    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+                  XLCDPut   0x0022a6    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+               XLCDIsBusy   0x0022e8    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+              XLCDGetAddr   0x002338    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+                  XLCDGet   0x002384    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+         XLCDPutRomString   0x0023ce    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+         XLCDPutRamString   0x002412    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+                 PWM_init   0x002452    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\pwm\pwm.c
+                 RightPWM   0x00247c    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\pwm\pwm.c
+                  LeftPWM   0x002562    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\pwm\pwm.c
+                 Q_Update   0x002648    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+          Task_Quadrature   0x00275a    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+          ___for_lbl00018   0x00278c    program     static                          
+          ___for_lbl00016   0x0027d0    program     static                          
+          ___for_lbl00017   0x0027d2    program     static                          
+       ___return_lbl00015   0x0027d2    program     static                          
+               InitTimer0   0x0027d4    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Timer0.c
+      InterruptHandlerLow   0x0027ec    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Timer0.c
+                _do_cinit   0x002888    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                     test   0x0028a2    program     static                          
+                copy_loop   0x0028fa    program     static                          
+            copy_one_byte   0x002900    program     static                          
+             done_copying   0x00290e    program     static                          
+       ___return_lbl00002   0x002924    program     static                          
+                     done   0x002924    program     static                          
+            XLCDDelay15ms   0x002926    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcddelay.c
+       ___return_lbl00000   0x00293c    program     static                          
+             XLCDDelay4ms   0x00293e    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcddelay.c
+       ___return_lbl00001   0x002954    program     static                          
+          XLCD_Delay500ns   0x002956    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcddelay.c
+       ___return_lbl00002   0x002962    program     static                          
+                XLCDDelay   0x002964    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcddelay.c
+       ___return_lbl00003   0x00297a    program     static                          
+                 ADC_init   0x00297c    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\myadc.c
+                    getAD   0x00298c    program     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\myadc.c
+               __string_1   0x0029b6    program     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+               __string_0   0x0029c7    program     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+            __zero_memory   0x0029d8    program     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   loop_h   0x0029e6    program     static C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               zero_block   0x0029e6    program     static C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                compare_l   0x0029ee    program     static C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   loop_l   0x0029f0    program     static C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 _startup   0x0029f8    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                     loop   0x002a08    program     static                          
+       ___return_lbl00001   0x002a12    program     static                          
+                   __init   0x002a14    program     extern C:\MCC18\v3_39\src\traditional\stdclib\__init.c
+             _OS_BestTask   0x000000       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+             _OS_LastTask   0x000002       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+        _OS_Best_Priority   0x000004       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+                _OS_Bsems   0x000005       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\events\osa_bsem.c
+                _OS_Tasks   0x000006       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_tasks.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\pwm\pwm.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\kernel\system\osa_tasks.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                  __tmp_0   0x000024       data     static C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\myadc.c
+                _OS_Flags   0x00002c       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+                 _OS_Temp   0x00002d       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+               _OS_Temp_I   0x00002e       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+                _OS_TempH   0x00002f       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+              _OS_CurTask   0x000030       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\osa\osa.c
+                     SIGN   0x000032       data     extern C:\MCC18\v3_39\src\traditional\math\cmath18.asm
+                __FPFLAGS   0x000033       data     extern C:\MCC18\v3_39\src\traditional\math\cmath18.asm
+            __FPFLAGSbits   0x000033       data     extern C:\MCC18\v3_39\src\traditional\math\cmath18.asm
+                  hexChar   0x000060       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+             WelcomeLine1   0x000070       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+             WelcomeLine2   0x000072       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                  frontIR   0x000074       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                   leftIR   0x000076       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                  rightIR   0x000078       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                  deltaLR   0x00007a       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+               deltaPower   0x00007c       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                leftPower   0x00007e       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+               rightPower   0x000080       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                 lastTurn   0x000082       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                    queue   0x000083       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                   buffer   0x000088       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\main.c
+                     prom   0x00009c       data     static C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                curr_byte   0x00009f       data     static C:\MCC18\v3_39\src\traditional\startup\c018i.c
+               curr_entry   0x0000a1       data     static C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                 data_ptr   0x0000a3       data     static C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                       q1   0x0000a6       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+                       q2   0x0000aa       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\Quadrature.c
+                       lm   0x0000ae       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                       rm   0x0000b0       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                        c   0x0000b2       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                       b1   0x0000b3       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                       b2   0x0000b4       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\usart\usart.c
+                _vXLCDreg   0x0000b5       data     extern C:\proj\school\RAIL\svn\ivibot11\trunk\RTOS-BOt-maze\xlcd\xlcd.c
+                  SPPDATA   0x000f62       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SPPCFG   0x000f63       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               SPPCFGbits   0x000f63       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SPPEPS   0x000f64       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               SPPEPSbits   0x000f64       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               SPPCONbits   0x000f65       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SPPCON   0x000f65       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UFRML   0x000f66       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UFRMLbits   0x000f66       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UFRM   0x000f66       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UFRMHbits   0x000f67       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UFRMH   0x000f67       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      UIR   0x000f68       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  UIRbits   0x000f68       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      UIE   0x000f69       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  UIEbits   0x000f69       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEIR   0x000f6a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEIRbits   0x000f6a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEIEbits   0x000f6b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEIE   0x000f6b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    USTAT   0x000f6c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                USTATbits   0x000f6c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UCON   0x000f6d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UCONbits   0x000f6d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UADDR   0x000f6e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UADDRbits   0x000f6e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UCFG   0x000f6f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UCFGbits   0x000f6f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP0   0x000f70       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP0bits   0x000f70       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP1   0x000f71       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP1bits   0x000f71       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP2bits   0x000f72       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP2   0x000f72       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP3bits   0x000f73       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP3   0x000f73       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP4bits   0x000f74       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP4   0x000f74       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP5bits   0x000f75       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP5   0x000f75       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP6bits   0x000f76       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP6   0x000f76       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP7bits   0x000f77       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP7   0x000f77       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP8   0x000f78       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP8bits   0x000f78       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     UEP9   0x000f79       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 UEP9bits   0x000f79       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP10bits   0x000f7a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP10   0x000f7a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP11bits   0x000f7b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP11   0x000f7b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP12bits   0x000f7c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP12   0x000f7c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP13bits   0x000f7d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP13   0x000f7d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP14bits   0x000f7e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP14   0x000f7e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                UEP15bits   0x000f7f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    UEP15   0x000f7f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTA   0x000f80       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTAbits   0x000f80       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTB   0x000f81       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTBbits   0x000f81       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTC   0x000f82       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTCbits   0x000f82       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTD   0x000f83       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTDbits   0x000f83       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PORTE   0x000f84       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                PORTEbits   0x000f84       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATA   0x000f89       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATAbits   0x000f89       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATB   0x000f8a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATBbits   0x000f8a       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATCbits   0x000f8b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATC   0x000f8b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATD   0x000f8c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATDbits   0x000f8c       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     LATE   0x000f8d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 LATEbits   0x000f8d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDRAbits   0x000f92       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRA   0x000f92       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISAbits   0x000f92       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISA   0x000f92       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDRBbits   0x000f93       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRB   0x000f93       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISBbits   0x000f93       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISB   0x000f93       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISCbits   0x000f94       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDRCbits   0x000f94       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRC   0x000f94       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISC   0x000f94       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRD   0x000f95       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDRDbits   0x000f95       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISD   0x000f95       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISDbits   0x000f95       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     DDRE   0x000f96       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 DDREbits   0x000f96       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TRISE   0x000f96       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TRISEbits   0x000f96       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  OSCTUNE   0x000f9b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              OSCTUNEbits   0x000f9b       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PIE1   0x000f9d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 PIE1bits   0x000f9d       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 PIR1bits   0x000f9e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PIR1   0x000f9e       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 IPR1bits   0x000f9f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     IPR1   0x000f9f       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PIE2   0x000fa0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 PIE2bits   0x000fa0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PIR2   0x000fa1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 PIR2bits   0x000fa1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 IPR2bits   0x000fa2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     IPR2   0x000fa2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   EECON1   0x000fa6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               EECON1bits   0x000fa6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   EECON2   0x000fa7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   EEDATA   0x000fa8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    EEADR   0x000fa9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    RCSTA   0x000fab       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                RCSTAbits   0x000fab       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TXSTA   0x000fac       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                TXSTAbits   0x000fac       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TXREG   0x000fad       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    RCREG   0x000fae       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    SPBRG   0x000faf       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SPBRGH   0x000fb0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    T3CON   0x000fb1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                T3CONbits   0x000fb1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR3L   0x000fb2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR3H   0x000fb3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    CMCON   0x000fb4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                CMCONbits   0x000fb4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               CVRCONbits   0x000fb5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CVRCON   0x000fb5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              ECCP1ASbits   0x000fb6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               CCP1ASbits   0x000fb6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCP1AS   0x000fb6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  ECCP1AS   0x000fb6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+             ECCP1DELbits   0x000fb7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 ECCP1DEL   0x000fb7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  CCP1DEL   0x000fb7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              CCP1DELbits   0x000fb7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  BAUDCTL   0x000fb8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              BAUDCTLbits   0x000fb8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              BAUDCONbits   0x000fb8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  BAUDCON   0x000fb8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              CCP2CONbits   0x000fba       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  CCP2CON   0x000fba       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    CCPR2   0x000fbb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCPR2L   0x000fbb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCPR2H   0x000fbc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              CCP1CONbits   0x000fbd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  CCP1CON   0x000fbd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 ECCP1CON   0x000fbd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+             ECCP1CONbits   0x000fbd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    CCPR1   0x000fbe       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCPR1L   0x000fbe       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   CCPR1H   0x000fbf       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               ADCON2bits   0x000fc0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADCON2   0x000fc0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               ADCON1bits   0x000fc1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADCON1   0x000fc1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADCON0   0x000fc2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               ADCON0bits   0x000fc2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    ADRES   0x000fc3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADRESL   0x000fc3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   ADRESH   0x000fc4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  SSPCON2   0x000fc5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              SSPCON2bits   0x000fc5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  SSPCON1   0x000fc6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              SSPCON1bits   0x000fc6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              SSPSTATbits   0x000fc7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  SSPSTAT   0x000fc7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SSPADD   0x000fc8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   SSPBUF   0x000fc9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                T2CONbits   0x000fca       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    T2CON   0x000fca       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      PR2   0x000fcb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     TMR2   0x000fcc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                T1CONbits   0x000fcd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    T1CON   0x000fcd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR1L   0x000fce       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR1H   0x000fcf       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     RCON   0x000fd0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 RCONbits   0x000fd0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               WDTCONbits   0x000fd1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   WDTCON   0x000fd1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  HLVDCON   0x000fd2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              HLVDCONbits   0x000fd2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   LVDCON   0x000fd2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               LVDCONbits   0x000fd2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   OSCCON   0x000fd3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               OSCCONbits   0x000fd3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                T0CONbits   0x000fd5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    T0CON   0x000fd5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR0L   0x000fd6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    TMR0H   0x000fd7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   STATUS   0x000fd8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               STATUSbits   0x000fd8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     FSR2   0x000fd9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR2L   0x000fd9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR2H   0x000fda       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PLUSW2   0x000fdb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  PREINC2   0x000fdc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTDEC2   0x000fdd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTINC2   0x000fde       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    INDF2   0x000fdf       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      BSR   0x000fe0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR1L   0x000fe1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     FSR1   0x000fe1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR1H   0x000fe2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PLUSW1   0x000fe3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  PREINC1   0x000fe4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTDEC1   0x000fe5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTINC1   0x000fe6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    INDF1   0x000fe7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     WREG   0x000fe8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR0L   0x000fe9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     FSR0   0x000fe9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    FSR0H   0x000fea       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PLUSW0   0x000feb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  PREINC0   0x000fec       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTDEC0   0x000fed       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                 POSTINC0   0x000fee       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    INDF0   0x000fef       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              INTCON3bits   0x000ff0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  INTCON3   0x000ff0       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+              INTCON2bits   0x000ff1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  INTCON2   0x000ff1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   INTCON   0x000ff2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               INTCONbits   0x000ff2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     PROD   0x000ff3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PRODL   0x000ff3       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                    PRODH   0x000ff4       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   TABLAT   0x000ff5       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  TBLPTRL   0x000ff6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   TBLPTR   0x000ff6       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  TBLPTRH   0x000ff7       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                  TBLPTRU   0x000ff8       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                       PC   0x000ff9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      PCL   0x000ff9       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PCLATH   0x000ffa       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   PCLATU   0x000ffb       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+               STKPTRbits   0x000ffc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                   STKPTR   0x000ffc       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                      TOS   0x000ffd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     TOSL   0x000ffd       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     TOSH   0x000ffe       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+                     TOSU   0x000fff       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F4550.asm
+
+

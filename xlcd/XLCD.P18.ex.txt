@@ -1,0 +1,199 @@
+/*###############################################################################
+;# TITLE   "LCD Display"	
+;# 				
+;#      Program         :External LCD
+;#      Version         :1.0	
+;#      Revision Date   :6/9/03   	
+;#      Author          :Naveen Raj
+;#									
+;# Program demonstrates use of External LCD Module
+;# general purpose library module.*/
+/*###############################################################################*/
+
+
+#include "xlcd.h"
+#define XLCDCursorOnBlinkOn()        XLCDCommand(0x0F)	//the user may refer the LCD data sheet
+#define XLCDCursorOnBlinkOff()       XLCDCommand(0x0E)	//and generate commands like this
+#define XLCDDisplayOnCursorOff()     XLCDCommand(0x0C)
+#define XLCDDisplayOff()             XLCDCommand(0x08)
+#define XLCDCursorMoveLeft()         XLCDCommand(0x10)
+#define XLCDCursorMoveRight()        XLCDCommand(0x14)
+#define XLCDDisplayMoveLeft()        XLCDCommand(0x18)
+#define XLCDDisplayMoveRight()       XLCDCommand(0x1C)
+rom const char aaa[]="Hello";
+ram const char bbb[]="Microchip";
+
+/*The user  is require to write this 15 milli second delay in his routine,this delay */
+/*is required as it is used in XLCDInit() which is used to initialize the LCD module*/
+
+void XLCDDelay15ms (void)
+{
+    int i;
+    for(i=0;i<10000;i++)
+    {
+    Nop();
+    }
+    return;
+}
+
+/*The user  is require to write this 4 milli second delay in his routine,this  delay */
+/*is required as it is used in XLCDInit() which is used to initialize the LCD module*/
+
+void XLCDDelay4ms (void)
+{
+    int i;
+    for(i=0;i<2500;i++)
+    {
+    Nop();
+    }
+    return;
+}
+/*The user  is require to write this 500 nano second in his routine  this  delay */
+/*is required as it is used in all read and write commaands in the XLCD routines*/
+
+void XLCD_Delay500ns(void)
+{
+    Nop();
+    Nop();
+    Nop();
+}
+/*The user  is require to write this XLCDDelay() in his routine,this is required to write if */
+/*the mode selected is by delay , it is used in all XLCD read and write commands of this routine */
+void XLCDDelay(void)
+    {
+    int i;
+    for(i=0;i<1000;i++)
+        {
+        Nop();
+        }
+    return;
+    }
+
+void main (void)
+{
+ADCON1=0x07;                            //make PORTA digital as control portpins are from PORTA
+
+XLCDInit();                             //initialize the LCD module
+
+// example to display strings           
+/*XLCDPutRomString(aaa);
+//XLCDPutRamString(bbb);
+while(1);*/
+
+
+#ifdef  XLCD_BLOCK
+
+#ifdef XLCD_8BIT
+XLCDPut('8');
+XLCDPut('B');
+XLCDPut('i');
+XLCDPut('t');
+#endif
+#ifdef XLCD_4BIT
+XLCDPut('4');
+XLCDPut('B');
+XLCDPut('i');
+XLCDPut('t');
+    #ifdef  XLCD_UPPER
+    XLCDPut('U');
+    XLCDPut('p');
+    XLCDPut('p');
+    XLCDPut('e');
+    XLCDPut('r');
+    #endif
+    #ifdef  XLCD_LOWER
+    XLCDPut('L');
+    XLCDPut('o');
+    XLCDPut('w');
+    XLCDPut('e');
+    XLCDPut('r');
+    #endif
+#endif 
+
+XLCDL2home();
+
+#ifdef  XLCD_DELAYMODE
+    XLCDPut('D');
+    XLCDPut('e');
+    XLCDPut('l');
+    XLCDPut('a');
+    XLCDPut('y');
+#endif 
+#ifdef  XLCD_READBFMODE
+    XLCDPut('B');
+    XLCDPut('F');
+    XLCDPut('R');
+    XLCDPut('e');
+    XLCDPut('a');
+    XLCDPut('d');
+#endif 
+   
+#endif  //for XLCD_BLOCK
+
+
+//example for non blocking mode
+
+
+#ifdef  XLCD_NONBLOCK
+
+    #ifdef  XLCD_8BIT
+    while(XLCDIsBusy());
+    XLCDPut('8');   
+    #endif
+    
+    #ifdef  XLCD_4BIT
+    #ifdef  XLCD_UPPER
+        while(XLCDIsBusy());
+        XLCDPut('4');
+        while(XLCDIsBusy());
+        XLCDPut('U');
+    #endif
+    
+    
+    #ifdef  XLCD_LOWER 
+         while(XLCDIsBusy());
+        XLCDPut('4');      
+        while(XLCDIsBusy());
+        XLCDPut('L');    
+    #endif       
+    #endif
+    
+    
+        while(XLCDIsBusy());
+        XLCDCommand(0xc0);
+        while(XLCDIsBusy());
+        XLCDPut('N');
+        while(XLCDIsBusy());
+        XLCDPut('O');
+        while(XLCDIsBusy());
+        XLCDPut('N');
+        while(XLCDIsBusy());
+        XLCDPut('B');
+        while(XLCDIsBusy());
+        XLCDPut('L');
+        while(XLCDIsBusy());
+        XLCDPut('o');
+        while(XLCDIsBusy());
+        XLCDPut('c');
+        while(XLCDIsBusy());
+        XLCDPut('k');
+
+#endif  //XLCD_NONBLOCK
+//while(XLCDIsBusy());
+//XLCDCommand(0x82);
+//while(XLCDIsBusy());
+//XLCDGet();
+//while(XLCDIsBusy());
+//XLCDGetAddr();
+
+//XLCDCursorOnBlinkOff();   	
+ XLCDDisplayOnCursorOff(); 			 	
+ //XLCDCursorMoveLeft();     	
+ //XLCDCursorMoveRight();    	
+ //XLCDDisplayMoveLeft();     	
+ //XLCDDisplayMoveRight() ;
+
+
+while(1);
+return ;
+}

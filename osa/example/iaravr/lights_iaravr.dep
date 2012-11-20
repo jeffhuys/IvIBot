@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3040091611</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Exe\lights_iaravr.d90</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl0t.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\osa.r90</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_ttimer.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_qtimer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_stimer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_squeue.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_tasks.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_csem.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\osa.pbi</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_timer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_stimer_old.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_bsem.h</file>
+      <file>$PROJ_DIR$\lights_iaravr.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_smsg.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_msg.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\lights_iaravr.pbd</file>
+      <file>$PROJ_DIR$\..\..\port\osa_include.c</file>
+      <file>$TOOLKIT_DIR$\inc\ioavr.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_tasks.c</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg0t.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\lights_iaravr.r90</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_dtimer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_system.c</file>
+      <file>$PROJ_DIR$\..\..\osa.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_queue.c</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg4433.xcl</file>
+      <file>$PROJ_DIR$\..\..\kernel\osa_oldnames.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_stimer.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_squeue.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r90</file>
+      <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\..\port\osa_include.h</file>
+      <file>$PROJ_DIR$\..\..\osa.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\lights_iaravr.a90</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_bsem.c</file>
+      <file>$PROJ_DIR$\OSAcfg.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_qtimer.c</file>
+      <file>$TOOLKIT_DIR$\inc\io4433.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_ttimer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_flag.h</file>
+      <file>$PROJ_DIR$\..\..\port\avr\osa_avr_iar.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_system.h</file>
+      <file>$PROJ_DIR$\..\..\port\avr\osa_avr_iar.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\lights_iaravr.pbi</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_csem.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_dtimer.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_queue.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\lights_iaravr.d90</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 26 20 21 2 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\lights_iaravr.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 21</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 36 39 35 46 27 45 7 12 8 43 15 50 14 6 5 11 22 4 42 10 18 41 32 34</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36 39 35 46 27 45 7 12 8 43 15 50 14 6 5 11 22 4 42 10 18 41 32 34</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\lights_iaravr.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 47 9</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\osa.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 36 39 35 46 27 45 7 12 8 43 15 50 14 6 5 11 22 4 42 10 17 44 18 41 32 49 40 28 3 29 25 48 38 23 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36 39 35 46 27 45 7 12 8 43 15 50 14 6 5 11 22 4 42 10 17 44 18 41 32 49 40 28 3 29 25 48 38 23 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\lights_iaravr.a90</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 26 20 21 2 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs>
+      <file>$TOOLKIT_DIR$\lib\clib\cl0t.r90</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_ttimer.c</file>
+      <file>$PROJ_DIR$\Release\Obj\osa.r90</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_qtimer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_stimer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_squeue.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_tasks.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_csem.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_timer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_stimer_old.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_bsem.h</file>
+      <file>$PROJ_DIR$\lights_iaravr.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_smsg.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_msg.h</file>
+      <file>$PROJ_DIR$\..\..\port\osa_include.c</file>
+      <file>$TOOLKIT_DIR$\inc\ioavr.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_tasks.c</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg0t.xcl</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_dtimer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_system.c</file>
+      <file>$PROJ_DIR$\..\..\osa.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_queue.c</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg4433.xcl</file>
+      <file>$PROJ_DIR$\..\..\kernel\osa_oldnames.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_stimer.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_squeue.c</file>
+      <file>$PROJ_DIR$\Release\Obj\lights_iaravr.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\osa.pbi</file>
+      <file>$PROJ_DIR$\Release\Exe\lights_iaravr.a90</file>
+      <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\..\port\osa_include.h</file>
+      <file>$PROJ_DIR$\Release\Obj\lights_iaravr.pbd</file>
+      <file>$PROJ_DIR$\..\..\osa.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_bsem.c</file>
+      <file>$PROJ_DIR$\OSAcfg.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_qtimer.c</file>
+      <file>$TOOLKIT_DIR$\inc\io4433.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_ttimer.h</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_flag.h</file>
+      <file>$PROJ_DIR$\..\..\port\avr\osa_avr_iar.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\system\osa_system.h</file>
+      <file>$PROJ_DIR$\..\..\port\avr\osa_avr_iar.h</file>
+      <file>$PROJ_DIR$\Release\Exe\lights_iaravr.d90</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_csem.c</file>
+      <file>$PROJ_DIR$\Release\Obj\lights_iaravr.r90</file>
+      <file>$PROJ_DIR$\..\..\kernel\timers\osa_dtimer.c</file>
+      <file>$PROJ_DIR$\..\..\kernel\events\osa_queue.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\lights_iaravr.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 45</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 33 35 31 42 23 41 6 10 7 39 13 47 12 5 4 9 18 3 38 8 15 37 29 30</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 35 31 42 23 41 6 10 7 39 13 47 12 5 4 9 18 3 38 8 15 37 29 30</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\osa.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 33 35 31 42 23 41 6 10 7 39 13 47 12 5 4 9 18 3 38 8 14 40 15 37 29 46 36 24 1 25 21 44 34 19 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 35 31 42 23 41 6 10 7 39 13 47 12 5 4 9 18 3 38 8 14 40 15 37 29 46 36 24 1 25 21 44 34 19 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\lights_iaravr.a90</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 22 17 45 2 0</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Obj\lights_iaravr.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 26 27</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\lights_iaravr.d90</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 22 17 45 2 0</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+    </file>
+  </configuration>
+</project>
+
+
