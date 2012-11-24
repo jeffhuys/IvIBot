@@ -40,6 +40,8 @@ extern void setLed7(int);
 extern void setLed8(int);
 extern void LedBar(void) ;
 
+extern void XLCDPutRamString(char *string);
+
 void setLed(int ldnr, int state) {
 	BYTE bitl = 0x01 ;
 	bitl <<= ldnr ;
@@ -75,6 +77,8 @@ void procesCommand(void) {
 	}
 	else return ;
 
+    XLCDClear();
+    XLCDPutRamString((char*)CommandData);
 
     while( i < CommandLength ) {
         switch (CommandData[i++]) {
@@ -86,7 +90,7 @@ void procesCommand(void) {
 //				BeepOff() ;
 				break;
             case 'L':
-                //XLCDPut('L');
+                XLCDPut('L');
                 //pressedA();
 
                 setLed(CommandData[i] - '0', CommandData[i + 1]- '0');

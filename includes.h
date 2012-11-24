@@ -21,22 +21,13 @@
 
 #include <p18f4550.h>
 #include "GenericTypeDefs.h"
-//#include "system\typedefs.h"
-//#include "system\usb\usb.h"
+#include <osa.h>
+#include <string.h>
 #include "xlcd/xlcd.h"
-
-/* #include "./USB/usb.h" */
-#include "port.h"
-//#include "port.h"
-//#include "button.h"
-//#include "port.h"
-//#include "leds.h"
-//#include "adc.h"
-//#include "adc.h"
-//#include "distance.h"
 #include "pwm/pwm.h"
-//#include "pwm.h"
-//#include "motor.h"
-#include "commands.h"
+#include "myadc.h"
+
+#include "port.h"
+#include "pwm/pwm.h"
 
 #endif

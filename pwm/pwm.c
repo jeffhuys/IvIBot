@@ -39,8 +39,12 @@ BYTE stored_CCPR1L , stored_CCPR2L  ;
 void PWM_init(void) {
     // INIT both PWMS en enable there output pins
     //
-    PR2 = 250; //set PR2 register to set PWM period to 19.53 kHz before prescale
-    T2CON = 0b01011101; //set T2CON register/timer TMR2 to prescale 1:4 gives a PWM freq of 5 khz
+//    PR2 = 250; //set PR2 register to set PWM period to 19.53 kHz before prescale
+//    T2CON = 0b01011101; //set T2CON register/timer TMR2 to prescale 1:4 gives a PWM freq of 5 khz
+
+    PR2   = 0xFF ;				//set PR2 register to set PWM period to 19.53 kHz before prescale
+    T2CON = 0x05;				//set T2CON register/timer TMR2 to prescale 1:4 gives a PWM freq of 5 khz
+
     //and set post scale to 11
     PIE1bits.TMR2IE = 1; //Timer 2 int enable
     IPR1bits.TMR2IP = 0; //Timer 2 int priority low
