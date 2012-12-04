@@ -22,6 +22,8 @@
 
 #define BYTE unsigned char
 
+BYTE stored_CCPR1L , stored_CCPR2L  ;
+
 //******************************************************************************
 //  PWM_init
 //
@@ -37,8 +39,12 @@
 void PWM_init(void) {
     // INIT both PWMS en enable there output pins
     //
-    PR2 = 250; //set PR2 register to set PWM period to 19.53 kHz before prescale
-    T2CON = 0b01011101; //set T2CON register/timer TMR2 to prescale 1:4 gives a PWM freq of 5 khz
+//    PR2 = 250; //set PR2 register to set PWM period to 19.53 kHz before prescale
+//    T2CON = 0b01011101; //set T2CON register/timer TMR2 to prescale 1:4 gives a PWM freq of 5 khz
+
+    PR2   = 0xFF ;				//set PR2 register to set PWM period to 19.53 kHz before prescale
+    T2CON = 0x05;				//set T2CON register/timer TMR2 to prescale 1:4 gives a PWM freq of 5 khz
+
     //and set post scale to 11
     PIE1bits.TMR2IE = 1; //Timer 2 int enable
     IPR1bits.TMR2IP = 0; //Timer 2 int priority low
@@ -100,4 +106,64 @@ void LeftPWM(int pwmDuty, int threshold) {
         if (pwmDuty > 255) pwmDuty = 255;
         CCPR2L = (char) (255 - (char) pwmDuty); // PIC PWM 1 register 8 high bits in PWM reg (complement)
     }
+}
+
+void setPR2_REG(BYTE value)
+{
+	PR2 = value;
+}
+
+void setT2CON_REG(BYTE value)
+{
+	T2CON = value;
+}
+
+void setCCP1_MODE_REG(BYTE value)
+{
+	CCP1CON = value;
+}
+
+void setCCP2_MODE_REG(BYTE value)
+{
+	CCP2CON = value;
+}
+
+void setCCPR1L_REG(BYTE value)
+{
+	CCPR1L = value;
+}
+
+void setCCPR2L_REG(BYTE value)
+{
+	CCPR2L = value;
+}
+
+BYTE getPR2_REG(void)
+{
+	return (BYTE)PR2;
+}
+
+BYTE getT2CON_REG(void)
+{
+	return (BYTE)T2CON;
+}
+
+BYTE getCCP1_MODE_REG(void)
+{
+	return (BYTE)CCP1CON;
+}
+
+BYTE getCCP2_MODE_REG(void)
+{
+	return (BYTE)CCP2CON;
+}
+
+BYTE getCCPR1L_REG(void)
+{
+	return (BYTE)CCPR1L;
+}
+
+BYTE getCCPR2L_REG(void)
+{
+	return (BYTE)CCPR2L;
 }
