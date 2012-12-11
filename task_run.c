@@ -1,4 +1,5 @@
 #include "task_run.h"
+#include "Stack.h"
 
 typedef int bool;
 
@@ -67,6 +68,73 @@ void Task_Run(void) {
             LeftPWM(0, 0);
             RightPWM(0, 0);
         } else {
+            //Crossroads
+            XLCDClear();
+            XLCDL1home();
+            //XLCDPut(peek());
+//            if(false){
+            if(isEmpty() == 0){//if OuterIR sensors see crossroad.
+                //int dir = pop();
+                switch (pop()){
+                    case 1:
+                        XLCDPut('1');
+                        LeftPWM(iviType*40, 0);
+                        RightPWM(iviType*130, 0);
+                        OS_Delay(2000);
+                        break;
+                    case 2:
+                        XLCDPut('2');
+                        LeftPWM(iviType*63, 0);
+                        RightPWM(iviType*130, 0);
+                        OS_Delay(2000);
+                        break;
+                    case 3:
+                        XLCDPut('3');
+                        LeftPWM(iviType*85, 0);
+                        RightPWM(iviType*130, 0);
+                        OS_Delay(2000);
+                        break;
+                    case 4:
+                        XLCDPut('4');
+                        LeftPWM(iviType*108, 0);
+                        RightPWM(iviType*130, 0);
+                        OS_Delay(2000);
+                        break;
+                    case 5:
+                        XLCDPut('5');
+                        LeftPWM(iviType*130, 0);
+                        RightPWM(iviType*130, 0);
+                        OS_Delay(2000);
+                        break;
+                     case 6:
+                        XLCDPut('6');
+                        LeftPWM(iviType*130, 0);
+                        RightPWM(iviType*108, 0);
+                        OS_Delay(2000);
+                        break;
+                    case 7:
+                        XLCDPut('7');
+                        LeftPWM(iviType*130, 0);
+                        RightPWM(iviType*85, 0);
+                        OS_Delay(2000);
+                        break;
+                    case 8:
+                        XLCDPut('8');
+                        LeftPWM(iviType*130, 0);
+                        RightPWM(iviType*63, 0);
+                        OS_Delay(2000);
+                        break;
+                    case 9:
+                        XLCDPut('9');
+                        LeftPWM(iviType*130, 0);
+                        RightPWM(iviType*40, 0);
+                        OS_Delay(2000);
+                        break;
+                    default:
+                        ; //NOP
+                }
+            }
+
             if (leftIR > rightIR - 20 && leftIR < rightIR + 20 && rightIR > leftIR - 20 && rightIR < leftIR + 20) {
                 // Track lost (or straight)
                 trackLostTimer++;
@@ -105,10 +173,11 @@ void Task_Run(void) {
                         lastTurn = 'r';
                         trackLostTimer = 0;
                     }
-
                 }
+            
             }
-
+//            LeftPWM(iviType*130, 0);
+//            RightPWM(iviType*130, 0);
         }
         XLCDPut(lastTurn);
 

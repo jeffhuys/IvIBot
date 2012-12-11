@@ -68,6 +68,6 @@ void Task_Server(void)
 
         CommandLength = NextCharIn; // Can do without, make NextChar in the target
         procesCommand();
-        sendReport();
+//        sendReport();
     }
 }

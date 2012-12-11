@@ -7,6 +7,7 @@
 #include "includes.h"
 #include "commands.h"
 #include "myadc.h"
+#include "Stack.h"
 
 // Firts bluetooth version
 #define REP_PROTOCOLVERSION 5
@@ -64,6 +65,7 @@ void setLed(int ldnr, int state) {
  *                   
  *****************************************************************************/
 int count = 0 ;
+int temper = 0;
 
 void procesCommand(void) {
     int i = 0;
@@ -72,8 +74,8 @@ void procesCommand(void) {
     PORTD = ++count ; 
 
     // Commandstrings starts with "AT" else  invalid string than skip whole
-	if ( CommandData[i] == 'A' && CommandData[i+1] == 'T' ) {
-		i+= 2;
+	if ( CommandData[i] == '#') {
+		i+= 1;
 	}
 	else return ;
 
@@ -117,20 +119,35 @@ void procesCommand(void) {
                 setPortECData(CommandData[i]);
                 i += 1;
                 break;
-            case 'r':
-                stored_CCPR1L = CommandData[i];
-                setCCPR1L_REG(CommandData[i]);
-                //stored_CCPR1L = 140;
-                //setCCPR1L_REG(140);
-                i += 1;
+            case 'I': //Instruction List
+                stack();
+                XLCDClear();
+                XLCDL1home();
+
+//                for (temper=0;temper<17;temper++){
+                while(CommandData[i]!= 'I'){
+                    XLCDPut(CommandData[i]);
+                    push(CommandData[i]);
+                    i += 1;   
+                }
+                i +=1;
+                             
                 break;
-            case 's':
-                stored_CCPR2L = CommandData[i];
-                setCCPR2L_REG(CommandData[i]);
-                //stored_CCPR2L = 140;
-                //setCCPR2L_REG(140);
-                i += 1;
-                break;
+
+//            case 'r':
+//                stored_CCPR1L = CommandData[i];
+//                setCCPR1L_REG(CommandData[i]);
+//                //stored_CCPR1L = 140;
+//                //setCCPR1L_REG(140);
+//                i += 1;
+//                break;
+//            case 's':
+//                stored_CCPR2L = CommandData[i];
+//                setCCPR2L_REG(CommandData[i]);
+//                //stored_CCPR2L = 140;
+//                //setCCPR2L_REG(140);
+//                i += 1;
+//                break;
             default:
               		/* nop */ ;
         }
