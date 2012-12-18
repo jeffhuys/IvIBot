@@ -7,6 +7,11 @@ enum {
     false, true
 };
 
+#define WAIT 1000000
+
+unsigned long long i = 0;
+int asdasd =0;
+
 int frontIR = 0;
 int leftIR = 0;
 int rightIR = 0;
@@ -69,78 +74,121 @@ void Task_Run(void) {
             RightPWM(0, 0);
         } else {
             //Crossroads
+
 //            XLCDClear();
-            XLCDL1home();
-            XLCDPut('W        ');
+//            XLCDL1home();
+//            XLCDPut('W');
+//            XLCDPut(peek());
+//            for(i=0;i<WAIT;i++);
             //XLCDPut(peek());
 //            if(false){
+
             if(isEmpty() == 0){//if OuterIR sensors see crossroad.
-                //int dir = pop();
+//
+//                XLCDClear();
+//                XLCDL1home();
+//                XLCDPutRomString("NOT EMPTY");
+//                asdasd = pop();
+//                XLCDPut(asdasd);
+//                for(i=0;i<WAIT;i++);
+
                 switch (pop()){
-                    case 1:
+//                switch (asdasd){
+                    case '1':
                         XLCDClear();
-                        XLCDPut('1');
+                        XLCDL1home();
+                        XLCDPutRomString("Turn 1");
                         LeftPWM(iviType*40, 0);
                         RightPWM(iviType*130, 0);
-                        OS_Delay(2000);
+                        for(i=0;i<WAIT;i++);
                         break;
-                    case 2:
-                        XLCDPut('2');
+                    case '2':
+                        XLCDClear();
+                        XLCDL1home();
+                        XLCDPutRomString("Turn 2");
                         LeftPWM(iviType*63, 0);
                         RightPWM(iviType*130, 0);
-                        OS_Delay(2000);
+                        for(i=0;i<WAIT;i++);
                         break;
-                    case 3:
-                        XLCDPut('3');
+                    case '3':
+                        XLCDClear();
+                        XLCDL1home();
+                        XLCDPutRomString("Turn 3");
                         LeftPWM(iviType*85, 0);
                         RightPWM(iviType*130, 0);
-                        OS_Delay(2000);
+                        for(i=0;i<WAIT;i++);
                         break;
-                    case 4:
-                        XLCDPut('4');
+                    case '4':
+                        XLCDClear();
+                        XLCDL1home();
+                        XLCDPutRomString("Turn 4");
                         LeftPWM(iviType*108, 0);
                         RightPWM(iviType*130, 0);
-                        OS_Delay(2000);
+                        for(i=0;i<WAIT;i++);
                         break;
-                    case 5:
-                        XLCDPut('5');
+                    case '5':
+                        XLCDClear();
+                        XLCDL1home();
+                        XLCDPutRomString("Turn 5");
                         LeftPWM(iviType*130, 0);
                         RightPWM(iviType*130, 0);
-                        OS_Delay(2000);
+                        for(i=0;i<WAIT;i++);
                         break;
-                     case 6:
-                        XLCDPut('6');
+                     case '6':
+                        XLCDClear();
+                        XLCDL1home();
+                        XLCDPutRomString("Turn 6");
                         LeftPWM(iviType*130, 0);
                         RightPWM(iviType*108, 0);
-                        OS_Delay(2000);
+                        for(i=0;i<WAIT;i++);
                         break;
-                    case 7:
-                        XLCDPut('7');
+                    case '7':
+                        XLCDClear();
+                        XLCDL1home();
+                        XLCDPutRomString("Turn 7");
                         LeftPWM(iviType*130, 0);
                         RightPWM(iviType*85, 0);
-                        OS_Delay(2000);
+                        for(i=0;i<WAIT;i++);
                         break;
-                    case 8:
-                        XLCDPut('8');
+                    case '8':
+                        XLCDClear();
+                        XLCDL1home();
+                        XLCDPutRomString("Turn 8");
                         LeftPWM(iviType*130, 0);
                         RightPWM(iviType*63, 0);
-                        OS_Delay(2000);
+                        for(i=0;i<WAIT;i++);
                         break;
-                    case 9:
-                        XLCDPut('9');
+                    case '9':
+                        XLCDClear();
+                        XLCDL1home();
+                        XLCDPutRomString("Turn 9");
                         LeftPWM(iviType*130, 0);
                         RightPWM(iviType*40, 0);
-                        OS_Delay(2000);
+                        for(i=0;i<WAIT;i++);
                         break;
-                    case -1:
+                    case '-1':
                         XLCDClear();
-                        XLCDPut('OMG OMG OMG');
-                        OS_Delay(2000);
+                        XLCDL1home();
+                        XLCDPutRomString("Queue was empty");
+                        for(i=0;i<WAIT;i++);
                         break;
                     default:
-                        ; //NOP
+                        XLCDClear();
+                        XLCDL1home();
+                        XLCDPutRomString("Wrong turn detected");
+                        for(i=0;i<WAIT;i++);
+                        break;
                 }
+                XLCDClear();
+                XLCDL1home();
+                XLCDPutRomString("- Running BOT - ");
             }
+//            else{
+//                XLCDClear();
+//                XLCDL1home();
+//                XLCDPutRomString("Queue Glitch");
+//                for(i=0;i<WAIT;i++);
+//            }
 
             if (leftIR > rightIR - 20 && leftIR < rightIR + 20 && rightIR > leftIR - 20 && rightIR < leftIR + 20) {
                 // Track lost (or straight)
