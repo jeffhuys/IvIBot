@@ -1,5 +1,5 @@
 #include "task_run.h"
-#include "Stack.h"
+#include "RotatingQueue.h"
 
 typedef int bool;
 
@@ -69,14 +69,16 @@ void Task_Run(void) {
             RightPWM(0, 0);
         } else {
             //Crossroads
-            XLCDClear();
+//            XLCDClear();
             XLCDL1home();
+            XLCDPut('W        ');
             //XLCDPut(peek());
 //            if(false){
             if(isEmpty() == 0){//if OuterIR sensors see crossroad.
                 //int dir = pop();
                 switch (pop()){
                     case 1:
+                        XLCDClear();
                         XLCDPut('1');
                         LeftPWM(iviType*40, 0);
                         RightPWM(iviType*130, 0);
@@ -128,6 +130,11 @@ void Task_Run(void) {
                         XLCDPut('9');
                         LeftPWM(iviType*130, 0);
                         RightPWM(iviType*40, 0);
+                        OS_Delay(2000);
+                        break;
+                    case -1:
+                        XLCDClear();
+                        XLCDPut('OMG OMG OMG');
                         OS_Delay(2000);
                         break;
                     default:

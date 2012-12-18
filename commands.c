@@ -7,7 +7,7 @@
 #include "includes.h"
 #include "commands.h"
 #include "myadc.h"
-#include "Stack.h"
+#include "RotatingQueue.h"
 
 // Firts bluetooth version
 #define REP_PROTOCOLVERSION 5
@@ -120,7 +120,7 @@ void procesCommand(void) {
                 i += 1;
                 break;
             case 'I': //Instruction List
-                stack();
+                clearQueue();
                 XLCDClear();
                 XLCDL1home();
 
