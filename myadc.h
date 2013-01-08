@@ -5,7 +5,6 @@ int getAD(char adcselector) ;
 #define  AD1SELECTOR 0x07
 #define  AD2SELECTOR 0x0B
 #define  AD3SELECTOR 0x0F
-#define  AD6SELECTOR 0x1B
 #define  AD8SELECTOR 0x23
 
 
