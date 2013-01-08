@@ -15,6 +15,7 @@
 extern unsigned long counter0;
 extern unsigned long counter1;
 extern unsigned long SystemTime;
+extern int emergencyStop;
 
 extern unsigned char CommandData[50];
 extern unsigned char ReportData[64];
@@ -132,6 +133,15 @@ void procesCommand(void) {
                 }
                 i +=1;
                              
+                break;
+
+            case 'S':
+                XLCDClear();
+                XLCDL1home();
+                XLCDPutRomString("STAHP! =(");
+
+                //Emergency STHAP!
+                emergencyStop = 1;
                 break;
 
 //            case 'r':

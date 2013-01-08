@@ -15,8 +15,11 @@ int asdasd =0;
 int frontIR = 0;
 int leftIR = 0;
 int rightIR = 0;
+int outerLeftIR = 0;
+int outerRightIR = 0;
 
 bool trackLost;
+int emergencyStop = 0;
 int started = 0;
 
 int deltaLR = 0;
@@ -58,18 +61,20 @@ void Task_Run(void) {
         leftIR = getAD1();
         frontIR = getAD2();
         rightIR = getAD3();
+        outerLeftIR = getAD0();
+        outerRightIR = getAD8();
 
         XLCDL2home(); // home but no cursor
-        PrintbyteToHex(leftIR);
+        PrintbyteToHex(outerLeftIR);
         XLCDPut(':');
         PrintbyteToHex(frontIR);
         XLCDPut(':');
-        PrintbyteToHex(rightIR);
+        PrintbyteToHex(outerRightIR);
         XLCDPut(':');
 
         deltaLR = leftIR - rightIR;
 
-        if (frontIR < 520) {
+        if (frontIR < 520 || emergencyStop == 1) {
             LeftPWM(0, 0);
             RightPWM(0, 0);
         } else {

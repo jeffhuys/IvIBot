@@ -51,7 +51,7 @@ void main(void) {
     ADC_init(); // Should be done first
     PWM_init(); // Beware pwm ports go together with ANALOG in
 
-    setPortBIO(0x00); // Set port B in output mode
+    setPortBIO(0x04); // Set port B in output mode
     setPortDIO(0x00); // Set port D in output mode
 
     XLCDInit(); // initialize the LCD module
