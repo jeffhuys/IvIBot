@@ -21,9 +21,22 @@ void putcUSART(char c) {
 
 void putStrUSART(char *str) {
 	int i = 0 ;
+        XLCDClear();
 	while ( str[i] ) {
+            XLCDPut(str[i]);
             putcUSART(str[i++]);
         }
+        putcUSART((char)13);
+}
+
+void sendCommand(rom char *string) {
+    while(*string) {
+        putcUSART(*string);
+        XLCDPut(*string);
+        *string++;
+    }
+    putcUSART((char)13);
+    XLCDPut((char)13);
 }
 
 //  getcUSART() wait until a valid char arrived in usart;
