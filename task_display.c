@@ -13,8 +13,8 @@ void Task_Display(void) {
     XLCDInit(); // initialize the LCD module
     XLCDClear();
     XLCDPutRomString(WelcomeLine1); // Hello world
-    XLCDL2home(); // home but no cursor
-    XLCDPutRomString(WelcomeLine2);
+//    XLCDL2home(); // home but no cursor
+//    XLCDPutRomString(WelcomeLine2);
 
     OS_Queue_Create(queue, buffer, 10);
 

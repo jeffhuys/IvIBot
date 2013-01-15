@@ -21,11 +21,15 @@ int getAD(char adcselector) ;
 #define  AD1SELECTOR 0x07
 #define  AD2SELECTOR 0x0B
 #define  AD3SELECTOR 0x0F
+#define  AD8SELECTOR 0x23
+
+
 
 #define  getAD0() getAD(AD0SELECTOR)
 #define  getAD1() getAD(AD1SELECTOR)
 #define  getAD2() getAD(AD2SELECTOR)
 #define  getAD3() getAD(AD3SELECTOR)
+#define  getAD8() getAD(AD8SELECTOR)
 
 
 //******************************************************************************
@@ -38,7 +42,7 @@ int getAD(char adcselector) ;
 void ADC_init() {
     //Configure analog pins, voltage reference and digital IO, ADCON1
     TRISA = 0xDF; // All input port A5 as output
-    ADCON1 = 0x0B; //Use AN0 to AN3, 4 channel
+    ADCON1 = 0x06; //Use AN0 to AN8, 8 channel
 
     //Select AD acquisition time and AD conversion clock, ADCON2
     ADCON2 = 0xA6;

@@ -18,6 +18,8 @@
 #include "task_server.h"
 #include "task_run.h"
 
+#include "RotatingQueue.h"
+
 //******************************************************************************
 //  Tasks
 //******************************************************************************
@@ -51,11 +53,16 @@ void main(void) {
     ADC_init(); // Should be done first
     PWM_init(); // Beware pwm ports go together with ANALOG in
 
-    setPortBIO(0x00); // Set port B in output mode
+    setPortBIO(0x04); // Set port B in output mode
     setPortDIO(0x00); // Set port D in output mode
 
     XLCDInit(); // initialize the LCD module
     XLCDClear();
+
+    // Push een kleine lijst
+    //push(2);
+    //push(1);
+    //push(3);
 
     OS_Task_Create(0, Task_Server); // BT Connection
     OS_Task_Create(1, Task_Hartbeat); // Show I am alive (called by scheduler)//

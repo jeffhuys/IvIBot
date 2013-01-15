@@ -13,6 +13,7 @@
 //******************************************************************************
 #include <p18f4550.h>
 #include "pwm/pwm.h"
+#include "iviType.h"
 
 #define FORWARD 1
 #define BACKWARD 0
@@ -89,6 +90,16 @@ void RightPWM(int pwmDuty, int threshold) {
 }
 
 void LeftPWM(int pwmDuty, int threshold) {
+    PORTEbits.RE0 = FORWARD;
+
+    if(pwmDuty < 0) {
+        PORTEbits.RE0 = BACKWARD;
+        pwmDuty = -pwmDuty;
+    }
+
+    CCPR2L = pwmDuty; // PIC PWM 1 register 8 high bits in PWM reg
+
+    /*
     if (pwmDuty < 0) {
         PORTEbits.RE0 = BACKWARD;
         pwmDuty = -pwmDuty + threshold;
@@ -104,8 +115,9 @@ void LeftPWM(int pwmDuty, int threshold) {
         if (pwmDuty != 0) pwmDuty += threshold;
 
         if (pwmDuty > 255) pwmDuty = 255;
-        CCPR2L = (char) (255 - (char) pwmDuty); // PIC PWM 1 register 8 high bits in PWM reg (complement)
+        CCPR2L = (BYTE) (255 - (int) pwmDuty); // PIC PWM 1 register 8 high bits in PWM reg (complement)
     }
+     */
 }
 
 void setPR2_REG(BYTE value)

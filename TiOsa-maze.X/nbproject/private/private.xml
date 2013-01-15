@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/main.c</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/task_server.c</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/RotatingQueue.c</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/RotatingQueue.h</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/task_display.c</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/commands.c</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/task_run.c</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/myadc.h</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/port.c</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/task_heartbeat.c</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/myadc.c</file>
+        <file>file:/Users/markblaas/Developer/MPLabX/IvIbot/usart.c</file>
+    </open-files>
 </project-private>
